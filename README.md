@@ -32,7 +32,7 @@ This project is a part of the course PRINCIPLES OF SOFTWARE DEVELOPMENT PROCESS.
    npm run dev
 2. Open http://localhost:3000 in your browser to see the application.
 
-##Team
+## Team
 1.
 2.
 3.
