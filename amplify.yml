@@ -2,16 +2,14 @@ frontend:
   phases:
     preBuild:
       commands:
+        - cd dormradar
         - npm ci
     build:
       commands:
         - npm run build
+        - npm run export
         - ls -la
   artifacts:
-    baseDirectory: .next
+    baseDirectory: dormradar/out
     files:
       - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
-      - dormradar/.next/cache/**/*
