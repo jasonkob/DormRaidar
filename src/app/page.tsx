@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 import { Search, Menu, User } from 'lucide-react';
 
 const Homepage = () => {
@@ -14,7 +15,7 @@ const Homepage = () => {
         <div className="flex items-center gap-8">
           <a href="#" className="text-gray-700 hover:text-gray-900">Home</a>
           <a href="#" className="text-gray-700 hover:text-gray-900">Booked</a>
-          <a href="#" className="text-gray-700 hover:text-gray-900">Help</a>
+          <Link href="/Help" className="text-gray-700 hover:text-gray-900">Help</Link>
           <div className="flex items-center gap-4">
             <Menu className="w-6 h-6 text-gray-700" />
             <User className="w-6 h-6 text-gray-700" />
