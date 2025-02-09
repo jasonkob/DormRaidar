@@ -27,7 +27,7 @@ const Homepage = () => {
       <div className="relative">
         <div className="absolute inset-0">
           <img
-            src="/api/placeholder/1200/800"
+            src="/DormradarLogo.png"
             alt="Dorm room"
             className="w-full h-[600px] object-cover"
           />
