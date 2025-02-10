@@ -29,7 +29,7 @@ This project is a part of the course PRINCIPLES OF SOFTWARE DEVELOPMENT PROCESS.
 ## Installation
 1. Run the development server:
    ```sh
-   npm run dev
+   npm start
 2. Open http://localhost:3000 in your browser to see the application.
 
 ## Team
