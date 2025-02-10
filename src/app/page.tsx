@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from "next/link";
+import Image from 'next/image';
 import { Search, Menu, User } from 'lucide-react';
 
 const Homepage = () => {
@@ -26,13 +27,9 @@ const Homepage = () => {
       {/* Hero Section */}
       <div className="relative">
         <div className="absolute inset-0">
-          <img
-            src="/DormradarLogo.png"
-            alt="Dorm room"
-            className="w-full h-[600px] object-cover"
-          />
-          <div className="absolute inset-0 bg-black/30"></div>
-        </div>
+          <Image src="/DormradarLogo.png" alt="Dorm room" className="w-full h-[600px] object-cover" />
+        <div className="absolute inset-0 bg-black/30"></div>
+      </div>
 
         <div className="relative px-6 py-32">
           <div className="max-w-3xl mx-auto text-center text-white">
