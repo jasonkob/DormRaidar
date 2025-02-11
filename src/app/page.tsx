@@ -10,11 +10,11 @@ const Homepage = () => {
       <nav className="flex items-center justify-between px-6 py-4 bg-white">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-yellow-400"></div>
-          <span className="text-xl text-black font-semibold">Radar Dorm</span>
+          <span className="text-xl font-semibold">Radar Dorm</span>
         </div>
         
         <div className="flex items-center gap-8">
-          <a href="#" className="text-gray-700 hover:text-gray-900">Home</a>
+          <Link href="/" className="text-gray-700 hover:text-gray-900">Home</Link>
           <a href="#" className="text-gray-700 hover:text-gray-900">Booked</a>
           <Link href="/Help" className="text-gray-700 hover:text-gray-900">Help</Link>
           <div className="flex items-center gap-4">
@@ -27,9 +27,9 @@ const Homepage = () => {
       {/* Hero Section */}
       <div className="relative">
         <div className="absolute inset-0">
-          <Image src="/DormradarLogo.png" alt="Dorm room" className="w-full h-[600px] object-cover" />
-        <div className="absolute inset-0 bg-black/30"></div>
-      </div>
+          <Image src="/dorm-room.png" alt="Dorm room" className="w-full h-[600px] object-cover" />
+          <div className="absolute inset-0 bg-black/30"></div>
+        </div>
 
         <div className="relative px-6 py-32">
           <div className="max-w-3xl mx-auto text-center text-white">
