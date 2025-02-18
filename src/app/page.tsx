@@ -27,7 +27,7 @@ const Homepage = () => {
       {/* Hero Section */}
       <div className="relative">
         <div className="absolute inset-0">
-          <Image src="/dorm-room.png" alt="Dorm room" className="w-full h-[600px] object-cover" />
+          <Image src="/dorm-room.png" alt="Dorm room" fill className="object-cover" />
           <div className="absolute inset-0 bg-black/30"></div>
         </div>
 
