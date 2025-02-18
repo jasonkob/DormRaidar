@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from "next/link";
-import { Search, Menu, User } from 'lucide-react';
+import {Menu, User } from 'lucide-react';
 
 export default function ContactPage() {
   return (
