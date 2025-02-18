@@ -8,7 +8,7 @@ export default function ContactPage() {
           {/* ช่อง Email */}
           <div className="bg-gray-100 p-6 rounded-lg text-center">
             <h3 className="text-sm font-semibold text-gray-600 mb-2">EMAIL</h3>
-            <p className="text-lg text-gray-800">RadeDome@gmail.com</p>
+            <p className="text-lg text-gray-800">RaderDorm@gmail.com</p>
           </div>
 
           {/* ช่อง Our Main Office */}
