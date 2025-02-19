@@ -1,7 +1,6 @@
 'use client';
-
 import React, { useState } from 'react';
-import { Eye, EyeOff, Mail, User, Lock } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
 import Link from 'next/link';
 
 const LoginPage = () => {
