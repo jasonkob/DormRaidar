@@ -62,13 +62,13 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen bg-white p-6">
       <Link href="/">
-        <button className="bg-amber-300 px-4 py-2 rounded-lg shadow-md mb-8">
+        <button className="text-black bg-amber-300 px-4 py-2 rounded-lg shadow-md mb-8">
           ← Back
         </button>
       </Link>
       
       <div className="max-w-md mx-auto">
-        <h2 className="text-2xl font-bold text-center mb-2">Login to your account</h2>
+        <h2 className="text-black text-2xl font-bold text-center mb-2">Login to your account</h2>
         <p className="text-gray-500 text-center mb-8">Good to have you back! Log in and explore.</p>
 
         {errorMessage && (
@@ -106,7 +106,7 @@ const LoginPage = () => {
           </div>
 
           <div className="flex items-center justify-between">
-            <label className="flex items-center">
+            <label className="text-black flex items-center">
               <input
                 type="checkbox"
                 className="mr-2"
@@ -118,8 +118,8 @@ const LoginPage = () => {
             <Link href="#" className="text-blue-600">Forget password?</Link>
           </div>
 
-          <button type="submit" className="w-full bg-amber-300 py-3 rounded-lg font-medium">Login</button>
-          <p className="text-center"><Link href="#" className="text-blue-600">Create Account</Link></p>
+          <button type="submit" className="text-black w-full bg-amber-300 py-3 rounded-lg font-medium">Login</button>
+          <p className="text-center"><Link href="/register" className="text-blue-600">Create Account</Link></p>
         </form>
       </div>
     </div>
