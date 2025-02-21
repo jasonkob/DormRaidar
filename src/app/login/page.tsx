@@ -20,16 +20,16 @@ const LoginPage = () => {
       const response = await axios.post(
         'https://5zvktmrcab.execute-api.ap-southeast-1.amazonaws.com/prod/login',
         {
-          email: formData.email,
-          password: formData.password
+          body: JSON.stringify({
+            email: formData.email,
+            password: formData.password
+          })
         },
         {
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
           },
-          withCredentials: true, // ถ้าจำเป็น
-          timeout: 10000
         }
       );      
     
