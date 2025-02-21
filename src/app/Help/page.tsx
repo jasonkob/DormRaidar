@@ -18,7 +18,9 @@ export default function ContactPage() {
           <Link href="/Help" className="text-gray-700 hover:text-gray-900">Help</Link>
           <div className="flex items-center gap-4">
             <Menu className="w-6 h-6 text-gray-700" />
+            <Link href="/login">
             <User className="w-6 h-6 text-gray-700" />
+            </Link>
           </div>
         </div>
       </nav>
