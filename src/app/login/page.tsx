@@ -20,38 +20,44 @@ const LoginPage = () => {
       const response = await axios.post(
         'https://5zvktmrcab.execute-api.ap-southeast-1.amazonaws.com/prod/login',
         {
-          body: JSON.stringify({
-            email: formData.email,
-            password: formData.password
-          })
+          email: formData.email,
+          password: formData.password
         },
         {
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
           },
-          // เพิ่ม withCredentials option
-          withCredentials: false
+          withCredentials: true, // ถ้าจำเป็น
+          timeout: 10000
         }
-      );
-  
+      );      
+    
       console.log('Response:', response);
       
       if (response.status === 200) {
         console.log('Login successful:', response.data);
+        // Handle successful login (e.g., redirect to dashboard)
       } else {
         setErrorMessage('Invalid credentials');
       }
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        console.error('API Error:', error.response?.data);
-        setErrorMessage(error.response?.data?.message || 'An error occurred');
+        // Check if response exists, otherwise log the error object
+        if (error.response) {
+          console.error('API Error:', error.response.data);
+          setErrorMessage(error.response.data?.message || 'An error occurred');
+        } else {
+          console.error('Axios Error without response:', error);
+          setErrorMessage('An unexpected error occurred');
+        }
       } else {
         console.error('Error:', error);
         setErrorMessage('An unexpected error occurred');
       }
     }
   };
+  
 
   return (
     <div className="min-h-screen bg-white p-6">
