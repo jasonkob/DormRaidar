@@ -53,7 +53,7 @@ export default function ContactPage() {
             <div className="bg-gray-100 p-6 rounded-lg text-center flex flex-col items-center justify-center">
               <Phone className="w-8 h-8 text-gray-600 mb-4" />
               <h3 className="text-sm font-semibold text-gray-600 mb-2">Phone Number</h3>
-              <p className="text-lg text-gray-800">00X-XXX-XXXX</p>
+              <p className="text-lg text-gray-800">1234567890</p>
             </div>
           </div>
         </div>
