@@ -44,11 +44,11 @@ export default function userLayout({
                     {shwMenu && (
                         <div className="absolute -bottom-[175px] right-0 w-[200px] h-[165px] border bg-white rounded-lg">
                             <ul className="border-b-2 mt-1">
-                                <li className="cursor-pointer select-none transition duration-150 ease-in-out  hover:bg-yellow-200 "><Link href="/signup"><p  className="px-4 py-2 text-[14px] font-semibold text-black ">Sign up</p></Link></li>
+                                <li className="cursor-pointer select-none transition duration-150 ease-in-out  hover:bg-yellow-200 "><Link href="/Register"><p  className="px-4 py-2 text-[14px] font-semibold text-black ">Sign up</p></Link></li>
                                 <li className="cursor-pointer select-none transition duration-150 ease-in-out  hover:bg-yellow-200 "><Link href="/Login"><p className="px-4 py-2 text-[14px] text-black">Login</p></Link></li>
                             </ul>
                             <ul className=" mt-1 mb-1">
-                                <li className="cursor-pointer select-none transition duration-150 ease-in-out  hover:bg-yellow-200 "><Link href="/signup" ><p className="px-4 py-2 text-[14px] text-black">Become Dorm Admin</p></Link></li>
+                                <li className="cursor-pointer select-none transition duration-150 ease-in-out  hover:bg-yellow-200 "><Link href="/Register" ><p className="px-4 py-2 text-[14px] text-black">Become Dorm Admin</p></Link></li>
                                 <li className="cursor-pointer select-none transition duration-150 ease-in-out  hover:bg-yellow-200 "><Link href="/Login" ><p className="px-4 py-2 text-[14px] text-black">Dorm Admin Login</p></Link></li>
                             </ul>
                         </div>
