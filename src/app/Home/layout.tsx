@@ -22,7 +22,7 @@ export default function userLayout({
                     <div className="flex items-center mx-8">
                         <Link href="/Home" className="mx-4 text-base  transition-all duration-200 ease-out hover:font-semibold hover:underline">Home</Link>
                         <Link href="/Booked" className="mx-4 text-base transition-all duration-200 ease-out hover:font-semibold hover:underline">My booking</Link>
-                        <Link href="/Finddorm" className="mx-4 text-base transition-all duration-200 ease-out hover:font-semibold hover:underline">Find Dorm</Link>
+                        <Link href="/FindDorm" className="mx-4 text-base transition-all duration-200 ease-out hover:font-semibold hover:underline">Find Dorm</Link>
                     </div>
                 </div>
                 <div className="relative flex flex-col justify-center mr-4  ">

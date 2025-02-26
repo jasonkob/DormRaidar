@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from "react"
+import Link from "next/link"
 
 export default  function Home (){
     const [location,setLocation] = useState('Select Location')
@@ -38,9 +39,9 @@ export default  function Home (){
         setShwPrice(false)
     }
 
-    const handleExplore = ()=>{
-        console.log('explore')
-    }
+    // const handleExplore = ()=>{
+    //     console.log('explore')
+    // }
 
     return(
         <div className="bg-[url('/home.jpg')]  bg-cover bg-center h-screen w-full rounded-3xl opacity-90">
@@ -97,7 +98,9 @@ export default  function Home (){
                         )}
                     </section>
                     <div className="w-4/12">
-                        <button className="w-11/12 bg-yellow-300 p-2 rounded-lg text-[22px] font-bold shadow-md select-none transition duration-200 ease-in hover:bg-yellow-400 " onClick={handleExplore}>Explore</button>
+                        <Link href="/FindDorm">
+                            <button className="w-11/12 bg-yellow-300 p-2 rounded-lg text-[22px] font-bold shadow-md select-none transition duration-200 ease-in hover:bg-yellow-400 " >Explore</button>
+                        </Link>
                     </div>
                 </div>
             </div>

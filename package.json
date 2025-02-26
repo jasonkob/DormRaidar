@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "@aws-amplify/adapter-nextjs": "^1.2.29-next-15.716cf28.0",
+    "@react-google-maps/api": "^2.20.6",
     "aws-amplify": "^6.8.3-next-15.716cf28.0",
     "axios": "^1.8.0",
     "lucide-react": "^0.474.0",
     "next": "^15.1.6",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "swiper": "^11.2.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
