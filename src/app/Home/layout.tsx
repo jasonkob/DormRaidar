@@ -26,7 +26,7 @@ export default function userLayout({
                     </div>
                 </div>
                 <div className="relative flex flex-col justify-center mr-4  ">
-                    <div className="flex flex-row items-center  p-2 border-2  rounded-xl cursor-pointer transition-all duration-150 ease-in-out  hover:shadow-xl" onClick={showMenu}>
+                    <div className="flex flex-row items-center  p-2 border-2  rounded-xl cursor-pointer transition-all duration-150 ease-in-out  hover:shadow-xl bg-white" onClick={showMenu}>
                         <svg className="mx-2" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 1.28571C0 0.944722 0.131696 0.617695 0.366117 0.376577C0.600537 0.135459 0.918479 0 1.25 0H18.75C19.0815 0 19.3995 0.135459 19.6339 0.376577C19.8683 0.617695 20 0.944722 20 1.28571C20 1.62671 19.8683 1.95373 19.6339 2.19485C19.3995 2.43597 19.0815 2.57143 18.75 2.57143H1.25C0.918479 2.57143 0.600537 2.43597 0.366117 2.19485C0.131696 1.95373 0 1.62671 0 1.28571ZM0 9C0 8.65901 0.131696 8.33198 0.366117 8.09086C0.600537 7.84974 0.918479 7.71429 1.25 7.71429H18.75C19.0815 7.71429 19.3995 7.84974 19.6339 8.09086C19.8683 8.33198 20 8.65901 20 9C20 9.34099 19.8683 9.66802 19.6339 9.90914C19.3995 10.1503 19.0815 10.2857 18.75 10.2857H1.25C0.918479 10.2857 0.600537 10.1503 0.366117 9.90914C0.131696 9.66802 0 9.34099 0 9ZM1.25 15.4286C0.918479 15.4286 0.600537 15.564 0.366117 15.8051C0.131696 16.0463 0 16.3733 0 16.7143C0 17.0553 0.131696 17.3823 0.366117 17.6234C0.600537 17.8645 0.918479 18 1.25 18H18.75C19.0815 18 19.3995 17.8645 19.6339 17.6234C19.8683 17.3823 20 17.0553 20 16.7143C20 16.3733 19.8683 16.0463 19.6339 15.8051C19.3995 15.564 19.0815 15.4286 18.75 15.4286H1.25Z" fill="black"/>
                         </svg>
@@ -44,12 +44,12 @@ export default function userLayout({
                     {shwMenu && (
                         <div className="absolute -bottom-[175px] right-0 w-[200px] h-[165px] border bg-white rounded-lg">
                             <ul className="border-b-2 mt-1">
-                                <li className="cursor-pointer select-none transition duration-150 ease-in-out  hover:bg-yellow-200 "><Link href="/Register"><p  className="px-4 py-2 text-[14px] font-semibold">Sign up</p></Link></li>
-                                <li className="cursor-pointer select-none transition duration-150 ease-in-out  hover:bg-yellow-200 "><Link href="/Login"><p className="px-4 py-2 text-[14px]">Login</p></Link></li>
+                                <li className="cursor-pointer select-none transition duration-150 ease-in-out  hover:bg-yellow-200 "><Link href="/Register"><p  className="px-4 py-2 text-[14px] font-semibold text-black ">Sign up</p></Link></li>
+                                <li className="cursor-pointer select-none transition duration-150 ease-in-out  hover:bg-yellow-200 "><Link href="/Login"><p className="px-4 py-2 text-[14px] text-black">Login</p></Link></li>
                             </ul>
                             <ul className=" mt-1 mb-1">
-                                <li className="cursor-pointer select-none transition duration-150 ease-in-out  hover:bg-yellow-200 "><Link href="/Register" ><p className="px-4 py-2 text-[14px]">Become Dorm Admin</p></Link></li>
-                                <li className="cursor-pointer select-none transition duration-150 ease-in-out  hover:bg-yellow-200 "><Link href="/Login" ><p className="px-4 py-2 text-[14px]">Dorm Admin Login</p></Link></li>
+                                <li className="cursor-pointer select-none transition duration-150 ease-in-out  hover:bg-yellow-200 "><Link href="/Register" ><p className="px-4 py-2 text-[14px] text-black">Become Dorm Admin</p></Link></li>
+                                <li className="cursor-pointer select-none transition duration-150 ease-in-out  hover:bg-yellow-200 "><Link href="/Login" ><p className="px-4 py-2 text-[14px] text-black">Dorm Admin Login</p></Link></li>
                             </ul>
                         </div>
                     )}
