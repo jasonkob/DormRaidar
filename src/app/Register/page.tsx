@@ -112,7 +112,7 @@ const RegisterPage = () => {
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Back Button */}
-        <Link href="/login">
+        <Link href="/Home">
           <button className="text-black bg-amber-300 px-4 py-2 rounded-lg shadow-md mb-8">
             ← Back
           </button>

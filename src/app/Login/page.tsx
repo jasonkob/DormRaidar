@@ -61,7 +61,7 @@ const LoginPage = () => {
 
   return (
     <div className="min-h-screen bg-white p-6">
-      <Link href="/">
+      <Link href="/Home">
         <button className="text-black bg-amber-300 px-4 py-2 rounded-lg shadow-md mb-8">
           ← Back
         </button>
