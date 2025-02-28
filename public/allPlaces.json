@@ -1,0 +1,1107 @@
+[
+    {
+        "name": "หอพักศิริวัฒน์",
+        "address": "485 Soi Keki Ngam 2, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7261242,
+          "lng": 100.7703865
+        },
+        "price": 5100,
+        "convenience": [
+          "air conditioner"
+        ],
+        "distance_from_reference_m": 654.28,
+        "image": null,
+        "floor": 1,
+        "room": "109",
+        "phone": "083-617-7036"
+      },
+      {
+        "name": "Tangkwa Dormitory",
+        "address": "13 32 Soi Keki Ngam 2, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7262724,
+          "lng": 100.7702577
+        },
+        "price": 4300,
+        "convenience": [
+          "furniture",
+          "air conditioner",
+          "allowpet"
+        ],
+        "distance_from_reference_m": 657.68,
+        "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ1UZm01zADzAtthfu_1oHpfU3GZYozduWsNnKfrceP8egcVNJiKIp485tMfOITwflGOHT1FT6wAJP-FvxQuqTx1T5rG_KX_BycE2NAOHEeycO8r21fQkNg8VrTbkGmRenHUp7naua3iCx1ZRcMpgGKYPmNcE4l6Ne2NuEyEBaUPi2dSwQ04P8M1&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+        "floor": 4,
+        "room": "404",
+        "phone": "083-443-1175"
+      },
+      {
+        "name": "หอพักพี531",
+        "address": "531 ซอย เกกีงาม 3 Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7258931,
+          "lng": 100.7700256
+        },
+        "price": 5000,
+        "convenience": [
+          "water heater",
+          "allowpet",
+          "air conditioner",
+          "wifi",
+          "furniture"
+        ],
+        "distance_from_reference_m": 700.94,
+        "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ3WxnJI9xAWCYpDHdu9H3DuomDgrjyQwtMsdFm8bkUX-clg4mu-4shwBqaaAf3aV0jkZqK7A5lKySo0ZwnQQNJLL_zgmM4t3N_bUtvcA2jiuOfJFlo4mL-wUlHx4JIorpMAerQc9QeYqPkmgyA036pKLJmKsduFkpyOJDuQbsISbtuZmxjfxUeD&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+        "floor": 1,
+        "room": "103",
+        "phone": "093-931-6010"
+      },
+      {
+        "name": "Chalermsri Dormitory",
+        "address": "531 ซอย เกกีงาม 3 Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7258931,
+          "lng": 100.7700256
+        },
+        "price": 5100,
+        "convenience": [
+          "water heater",
+          "allowpet",
+          "air conditioner",
+          "wifi"
+        ],
+        "distance_from_reference_m": 700.94,
+        "image": null,
+        "floor": 4,
+        "room": "412",
+        "phone": "088-635-1249"
+      },
+      {
+        "name": "หอพักกมลวาสน์",
+        "address": "13/38 Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7257585,
+          "lng": 100.7701904
+        },
+        "price": 5300,
+        "convenience": [
+          "allowpet"
+        ],
+        "distance_from_reference_m": 694.16,
+        "image": null,
+        "floor": 4,
+        "room": "408",
+        "phone": "095-654-6485"
+      },
+     
+      {
+        "name": "Pa Sanong Dormitory",
+        "address": "13/33 หมู่ที่ 3 Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7262724,
+          "lng": 100.7706129
+        },
+        "price": 3600,
+        "convenience": [
+          "furniture",
+          "wifi",
+          "air conditioner",
+          "water heater"
+        ],
+        "distance_from_reference_m": 624.82,
+        "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ0KLOeR2-yd-T4zNwkVBVUBizOpHdDC295FrOhZXpaT1LO_axlzTgmcG0sVufrnsDxf7kz8lXWCsBCeHtXhaqcd7zGh-KJs7qtid3QjW6kTCxG-f5n_Es5O647WnLwEY3dC-_aC6ej1tnwVFGr-v2eBuS6ekY2lFS6r5iH4cynUk7sSAINLoGY7&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+        "floor": 4,
+        "room": "403",
+        "phone": "088-760-7701"
+      },
+      {
+        "name": "หอพักเอกนำชัย",
+        "address": "106a Soi Keki Ngam 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7259552,
+          "lng": 100.770653
+        },
+        "price": 4900,
+        "convenience": [
+          "air conditioner",
+          "furniture"
+        ],
+        "distance_from_reference_m": 640.6,
+        "image": null,
+        "floor": 1,
+        "room": "106",
+        "phone": "089-609-2767"
+      },
+      {
+        "name": "Apinya Dormitory",
+        "address": "495 Soi Keki Ngam 2, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7256848,
+          "lng": 100.7703372
+        },
+        "price": 4100,
+        "convenience": [
+          "water heater"
+        ],
+        "distance_from_reference_m": 685.76,
+        "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ3f45xzhWrQ8lndFRvpmqqn6v_e9gwnyiyEII4inxIBAdOAXNug9p8-6M_lUzZqHzBhhiNa9DBAD7CHF3RzU-suJctPMgNMP6u6pkRDMS_vrKVvNbVyFk1AYO9ecLrrVI7uAzRnASXJw2U-QfZ2PRvfnP2ePPVB3-V3AF-mQGzEZL-cZCc5sthl&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+        "floor": 3,
+        "room": "302",
+        "phone": "097-503-6582"
+      },
+      {
+        "name": "J&W House",
+        "address": "451/1 ถนน ฉลองกรุง Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7264608,
+          "lng": 100.7704147
+        },
+        "price": 4900,
+        "convenience": [
+          "allowpet",
+          "wifi",
+          "water heater",
+          "air conditioner",
+          "furniture"
+        ],
+        "distance_from_reference_m": 632.57,
+        "image": null,
+        "floor": 2,
+        "room": "202",
+        "phone": "086-944-1477"
+      },
+      {
+        "name": "หอพักอัจฉริยา-พลภัทร์",
+        "address": "412และ413 Soi Keki Ngam 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7260706,
+          "lng": 100.770777
+        },
+        "price": 4500,
+        "convenience": [
+          "allowpet",
+          "wifi",
+          "air conditioner",
+          "water heater"
+        ],
+        "distance_from_reference_m": 622.3,
+        "image": null,
+        "floor": 4,
+        "room": "408",
+        "phone": "097-723-4576"
+      },
+      {
+        "name": "หอพักสมชาย",
+        "address": "415 Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7259522,
+          "lng": 100.7707637
+        },
+        "price": 5300,
+        "convenience": [
+          "air conditioner",
+          "allowpet"
+        ],
+        "distance_from_reference_m": 631.02,
+        "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ3YlWNmoBB-jKzAZPgfpyNUy1YVeuuUMqntWiuwfJFU7BAM5R5fSlCKVJBNWoUn1G5rk_Lvqhh9b30KEtbjgxkHztggmMy0bGtmYBZaTf7r8_hZCSxhq-tEPkTSy7lRiFmuL3S3QpBGVG4Et5UIvBUOPhqNuBceIecJiy8uXwWGzKzgCUujwHEb&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+        "floor": 1,
+        "room": "109",
+        "phone": "099-649-4238"
+      },
+      {
+        "name": "Ban Aramsri",
+        "address": "561 ซอย เกกีงาม 3 Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7260711,
+          "lng": 100.7697964
+        },
+        "price": 3900,
+        "convenience": [
+          "wifi",
+          "allowpet"
+        ],
+        "distance_from_reference_m": 712.02,
+        "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ1NKNQjUrdC1pLLNeusZhc_6Ht__Qz0d0nuCnseXu-rQfFXyik7JgxsgCbazMoOxSnAm6931azlFiv5LyCyNSD1x-g9YXA9Sm5YBKpakyxIzaJgK4S4B4XJeGZn3v20kOOKGVY6i4I9pG7_D9MNpSfNdqcfzdL0NZFeyFlkmfYW-bKvECv2PCg&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+        "floor": 5,
+        "room": "512",
+        "phone": "089-506-7133"
+      },
+      {
+        "name": "หอปฤษฎางค์บุตร",
+        "address": "PQG9+9W8, Lat Krabang, Bangkok 10520, Thailand",
+        "location": {
+          "lat": 13.7259073,
+          "lng": 100.7698178
+        },
+        "price": 3800,
+        "convenience": [
+          "water heater"
+        ],
+        "distance_from_reference_m": 719.23,
+        "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ3O8SZs44U-g9pQT0UNxNn_ghBvBz8v-kLtTpdnMM0R17Bdr-p-9sexY-r10DfMwDEjKszjTzWiz96-kWFVt3EpQbZerv1p0UB11NaXqMVJpV4sFBMxO71u2WPfjD0aKxSdqvj5x7t4FVdRWCdWyTUOIq_2X7uJ3ySvjHDessUjQqZmV1XqG69tPoGnlepEL8MTEi5LIKQdsIvnWV5YpF4MUnVv2vsdc8jXR2YhOcD0QSKMqnGY8qDDiGBj0OnuaC3pky3NBR3eYy4fCxCuC3fgMC4rGqM93Wfw39r1a5Z5NCBkYJzwjnJLvg&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+        "floor": 2,
+        "room": "202",
+        "phone": "081-525-1355"
+      },
+      {
+        "name": "หอเหมกรณ์",
+        "address": "PQG9+GWX 563 ซอย เกกีงาม 3 Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7262826,
+          "lng": 100.769815
+        },
+        "price": 4800,
+        "convenience": [
+          "air conditioner"
+        ],
+        "distance_from_reference_m": 698.89,
+        "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ1da1OT5GuexI_C6Un-MWHZuv1KTi42UNVQBBrIX_XW3NAjPsULQn8BgxfT6J_fU-6jyQs_ee2YUz9Dv5-HQt9nsWwWM-aBZfYf6tkMQ-qlmb5dajaptU07JjM7cbq5Su3wMZ08HpYS-J-cOhSP_yjqonN0vPE9hcIKAfBLhtXntwDYPWnBqvnWFJMnyyPPcly0zbmrOojL2hvTUyLMPOc6g-Fq-tC3DHN_uj_4X9XENJfzTLrKjlZK999Px0wtVvH_QsWgm-SJ419F-XpuO-ZyrtGHmRi1o1AdILVjCgQ50gkVpKjIMsfOzw&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+        "floor": 1,
+        "room": "103",
+        "phone": "082-792-3306"
+      },
+      {
+        "name": "หอพักทวีคุณ",
+        "address": "หอพักทวีคุณ 467 Soi Keki Ngam 2, ลาดกระบัง Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7265981,
+          "lng": 100.7702805
+        },
+        "price": 4900,
+        "convenience": [
+          "allowpet",
+          "furniture",
+          "air conditioner",
+          "water heater",
+          "wifi"
+        ],
+        "distance_from_reference_m": 638.05,
+        "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ049tL27SMadkcA7Qvct2tmwgzKK0uDbr1dNPJgMMH7h417tz8nKRLboawNGHB0yOXqpAPU4wvppHErAYwW209tvm3xkNgkHE-DEyPTdllQ1v1yuckkE-Nw58y9mVbqgho7SmOI-szCoKRYjEA5tVvZszonRYUuX73jmJ86EwSCJzJVjjo1P3izAfHHcaT3em7XIUPIxMg2-FLkCWfTdYLd9iLzFvPa2H9fOYCdI_Qd4sbdn4810LnYyEPuW-mKSnEXUE0BrfuqOT0ZAbq329xQkpgcm6S1xPkiAnWz9rox5esq_emYS4N4Bg&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+        "floor": 5,
+        "room": "506",
+        "phone": "085-808-8788"
+      },
+      {
+        "name": "หอพักชายขวัญพยงค์ 1",
+        "address": "421 Soi Keki Ngam 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7258314,
+          "lng": 100.7708207
+        },
+        "price": 4700,
+        "convenience": [
+          "furniture",
+          "air conditioner",
+          "allowpet"
+        ],
+        "distance_from_reference_m": 633.96,
+        "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ2uBAwm-8mcG751iD0SdZk21_SFbf0usY2EoHS8RS7hKB4ANBC3h3XlvxE_WYbJ59AqEJHhtqpLLY6-qIesZMLwUryny6QVrUExrnftnqqstD9bQ_rFsL4Qlffi4qNBfGi9ybwkbnIxqAnr7l7-WWXcmr4mCHI6lasTDwg1IeQroYVVKMKUx-89ilxrrhG6J65nIwoR8-YNvVZolK2c0EEHw8MOaP4ZS0zATNc4q5-9JbsBV_eUi5h2fWIygNmRR0HGffpdQnvlCXilrZ_JmGB89oWq4OjDZhb0vXa_PIY2OuqzmyVsqY-wnA&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+        "floor": 3,
+        "room": "304",
+        "phone": "086-419-7330"
+      },
+      {
+        "name": "Ban Saranya Dormitory",
+        "address": "PQGC+66Q, Soi Keki Ngam 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7255824,
+          "lng": 100.7706166
+        },
+        "price": 3500,
+        "convenience": [
+          "wifi"
+        ],
+        "distance_from_reference_m": 668.22,
+        "image": null,
+        "floor": 2,
+        "room": "212",
+        "phone": "088-711-7467"
+      },
+      {
+        "name": "หอพักเต้",
+        "address": "13/28 Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7255952,
+          "lng": 100.7706751
+        },
+        "price": 4900,
+        "convenience": [
+          "allowpet",
+          "water heater",
+          "furniture",
+          "air conditioner"
+        ],
+        "distance_from_reference_m": 662.35,
+        "image": null,
+        "floor": 4,
+        "room": "401",
+        "phone": "099-973-5001"
+      },
+      {
+        "name": "หอพักบัวอุไร",
+        "address": "PQG9+JW5 ซอย เกกีงาม 3 Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7265164,
+          "lng": 100.7698718
+        },
+        "price": 3700,
+        "convenience": [
+          "wifi",
+          "water heater"
+        ],
+        "distance_from_reference_m": 681.52,
+        "image": null,
+        "floor": 5,
+        "room": "510",
+        "phone": "087-127-4346"
+      },
+      {
+        "name": "JJอพาร์ทเม้น(ลาดกระบัง)",
+        "address": "PQGC+67M, Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7255781,
+          "lng": 100.7706745
+        },
+        "price": 4400,
+        "convenience": [
+          "wifi",
+          "water heater"
+        ],
+        "distance_from_reference_m": 663.57,
+        "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ2onEj6RLaKnuqv_6N93qd6sLgzrKA3gezzbTJCXsI2pZV1awcPFIcUDNGJm0km3_HcULXIxZdoYm3oXswU8WzpFzRVl0c-BWg69TJRLceNvspJACpvAlnOVF8-A16ZXRgrJZG_Smj-kDFC9uwvFluzv2K32Fb0utvaBzOMrm0YL535BBQblQcED-iEu7anv5KmqhE_Foqi2n8hMfEDhQTSeVodo8NYj_yNu1X5JVKh_eOVWF8KBaw2wSia5rI7_QSS2FFVuTTTE6TUu5AAQGqaW1UZvGaerwC_UkN-r6pH9KpXDrRIH5nJ1Q&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+        "floor": 3,
+        "room": "311",
+        "phone": "096-894-3765"
+      },
+      {
+        "name": "บ้านวรรธนะ",
+        "address": "166/ ซอย ฉลองกรุง 1 - ซอย เกกีงาม 3 Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7265737,
+          "lng": 100.7698523
+        },
+        "price": 3700,
+        "convenience": [
+          "wifi"
+        ],
+        "distance_from_reference_m": 680.6,
+        "image": null,
+        "floor": 3,
+        "room": "307",
+        "phone": "090-318-2358"
+      },
+      {
+        "name": "หอพักสุรัชนี 2",
+        "address": "PQGC+553, Soi Keki Ngam 2, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7253912,
+          "lng": 100.7704108
+        },
+        "price": 4600,
+        "convenience": [
+          "air conditioner",
+          "water heater",
+          "furniture"
+        ],
+        "distance_from_reference_m": 698.77,
+        "image": null,
+        "floor": 2,
+        "room": "210",
+        "phone": "093-885-2502"
+      },
+      {
+        "name": "หอพักหญิงกฤตเมธ",
+        "address": "13/5 Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7265866,
+          "lng": 100.7707978
+        },
+        "price": 5000,
+        "convenience": [
+          "water heater",
+          "wifi",
+          "furniture"
+        ],
+        "distance_from_reference_m": 589.7,
+        "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ3rlD0piuoVS6crllcwKaC_Wb5gYuLRM4XLnth4BtbaK-0IOpAaedcVUvYNnf8-oZjSXzSLqUeaICzMDsH2BP5MsbEDxRlunNYvbklLQeiVorPr39KNopP892DrdFYQ5BZ96X8OVyv9WkVOsgoNdZ2B1Zh-URJTc9c9yMjijTG1dpGNnSJQjkwHv7HjnGJj1cqL52_5sj50qNO6VLaprR7H_dSeECoxktQ7l_F1ixoNPjsmVCT7sDzjlCViSlsyAUD8Hhoc_61m1BvkgbmZfNEcOWZGN-tNy2bLK2ZbguBs_ilWnXqJW1L7w7zGH0aktZhx2Xs3OM5RnY66QqGqwIGEpZG2PrsBvTIzjxZd4P5TyNfWYwgLxKrg7JKLJs9cC5r_KYIuQEBP4boBeanu7Lb6tprytEaV5-ZoqZrl9JR7zg&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+        "floor": 2,
+        "room": "206",
+        "phone": "082-385-1275"
+      },
+      {
+        "name": "หอพักเปี่ยมอรุณ",
+        "address": "425/2 Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.725408,
+          "lng": 100.77059
+        },
+        "price": 4000,
+        "convenience": [
+          "wifi"
+        ],
+        "distance_from_reference_m": 682.42,
+        "image": null,
+        "floor": 1,
+        "room": "104",
+        "phone": "089-974-9846"
+      },
+      {
+        "name": "หอพักบ้านพงศักดิ์",
+        "address": "58 หมู่3 ถนน ฉลองกรุง ลาดกระบัง Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7268495,
+          "lng": 100.7702213
+        },
+        "price": 4600,
+        "convenience": [
+          "furniture",
+          "allowpet",
+          "air conditioner",
+          "wifi",
+          "water heater"
+        ],
+        "distance_from_reference_m": 631.42,
+        "image": null,
+        "floor": 3,
+        "room": "301",
+        "phone": "097-127-3925"
+      },
+      {
+        "name": "หอพักนาคบำรุงศรี",
+        "address": "533  แขวงลาดกระบัง เขตลาดกระบัง กรุงเทพมหานคร 10520, Thailand",
+        "location": {
+          "lat": 13.7267569,
+          "lng": 100.7698602
+        },
+        "price": 4300,
+        "convenience": [
+          "air conditioner",
+          "furniture"
+        ],
+        "distance_from_reference_m": 671.17,
+        "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ0mc1sJaEwPQ5xcRYceCI7fMBhKagz2tA0F0jR1KzzfC0H5c3QEggI1ZbF3tkAqP-JZVO_SjTjM5prEciocSYnJ68H7ezz2LluQ1GlIf4EuOAnFUmyM2rY1VG6NNVgpVswSHlTOqKiRbqbu71gDZANGhei87xTOAxZuAYti5QuoQ71mQHKFJjtsjn_t-WoZ-ybDESHMU2OJ8jRSdfyiYR2ihaljgqmL01iX2x4A5T6D86ISPrA8nwtHXuhXcm9FYYGMrQyAQwLX8EGayjT6nb9yybDWjUHIpO0XfZfO3wvoirj-pROiqll-aw&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+        "floor": 4,
+        "room": "401",
+        "phone": "098-904-7039"
+      },
+      {
+        "name": "Kittirat Dormitory",
+        "address": "PQGC+P83, Soi Keki Ngam 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7267641,
+          "lng": 100.7708048
+        },
+        "price": 4900,
+        "convenience": [
+          "furniture",
+          "air conditioner",
+          "wifi"
+        ],
+        "distance_from_reference_m": 579.38,
+        "image": null,
+        "floor": 1,
+        "room": "105",
+        "phone": "086-118-3092"
+      },
+      {
+        "name": "Nicha Dormitory",
+        "address": "PQG9+PWG ซอย เกกีงาม 3 Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7268155,
+          "lng": 100.769837
+        },
+        "price": 4800,
+        "convenience": [
+          "wifi",
+          "allowpet",
+          "water heater"
+        ],
+        "distance_from_reference_m": 670.8,
+        "image": null,
+        "floor": 3,
+        "room": "301",
+        "phone": "091-701-8417"
+      },
+      {
+        "name": "Kamolsit Dormitory",
+        "address": "PQGC+33G, Soi Keki Ngam 2, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7251973,
+          "lng": 100.7701973
+        },
+        "price": 5300,
+        "convenience": [
+          "air conditioner",
+          "furniture",
+          "wifi",
+          "allowpet",
+          "water heater"
+        ],
+        "distance_from_reference_m": 730.18,
+        "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ3nkBqDvy_dGBQun7zcQDBeKm4ye5Gnj29qbxhxqy3YhBM5hA9BwqofGSCsRH51GRwWngo0rpT3oOjDVN7A4B62gA9u3dpV8h8aDorn-G4AlLoyQdg0ZZOtdO5R_0g6juPC9I5G0VohpRynM_4nvwWUKN8up0zGHxTZee9UzGqEMaQeY23k1iFSPfKCANPc4mXBoNGtsoerb7WGvaLGzGWc7eGPc6RKMXa0kdAMvqQftedxK1xotGM1U6Tq_6OBnrPFSmjRVa1qaI5vuRlGC3fhaKn6A4c-0zO3LiAsKf4xKVBTmbTdo-mBW5Ao_kJbLppb_zbMKJv8zYdcOYJR29J95Gr72Lk-Cl8xZPlatSiIAbu0sm6_bmsPhLQDe44EJcBS9zDc8FthuvR1n1Fh2iZ9Eaf5bLuwOOnYFVALO0I9&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+        "floor": 4,
+        "room": "405",
+        "phone": "087-361-2743"
+      },
+      {
+        "name": "หอพักชัยพร 1",
+        "address": "49/1- Chalongkrung1 Ladkeabang Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7251448,
+          "lng": 100.7706329
+        },
+        "price": 5300,
+        "convenience": [
+          "water heater",
+          "furniture"
+        ],
+        "distance_from_reference_m": 697.53,
+        "image": null,
+        "floor": 5,
+        "room": "504",
+        "phone": "087-595-1566"
+      },
+      {
+        "name": "หอพัก SCM.Place",
+        "address": "441 Soi Keki Ngam 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7270775,
+          "lng": 100.7706586
+        },
+        "price": 4300,
+        "convenience": [
+          "water heater",
+          "furniture",
+          "air conditioner"
+        ],
+        "distance_from_reference_m": 577.89,
+        "image": null,
+        "floor": 1,
+        "room": "103",
+        "phone": "083-121-3943"
+      },
+      {
+        "name": "หอพักรัฐกานต์​",
+        "address": "185 Soi Khun Ying Liam, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.7271013,
+          "lng": 100.7699955
+        },
+        "price": 3700,
+        "convenience": [
+          "air conditioner",
+          "wifi"
+        ],
+        "distance_from_reference_m": 642.68,
+        "image": null,
+        "floor": 1,
+        "room": "102",
+        "phone": "083-304-3640"
+      },
+      {
+        "name": "หอพัก เจเจ 2",
+        "address": "เลขที่ 669/1 Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+        "location": {
+          "lat": 13.727113,
+          "lng": 100.770792
+        },
+        "price": 5200,
+        "convenience": [
+          "air conditioner"
+        ],
+        "distance_from_reference_m": 563.16,
+        "image": null,
+        "floor": 3,
+        "room": "304",
+        "phone": "081-172-2786"
+      },
+    {
+      "name": "Garden Home",
+      "address": "ใกล้เทคโนฯลาดกระบัง ซ.ฉลองกรุง1ถ.ฉลองกรุง ฉลองกรุง ลาดกระบัง Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7260418,
+        "lng": 100.7646576
+      },
+      "price": 4500,
+      "convenience": [
+        "water heater",
+        "air conditioner",
+        "wifi",
+        "allowpet"
+      ],
+      "distance_from_reference_m": 1226.66,
+      "image": null,
+      "floor": 3,
+      "room": "311",
+      "phone": "089-515-9171"
+    },
+    {
+      "name": "ดีน่าเพลส",
+      "address": "685 ซ ฉลองกรุง 1 แยก 6 Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7263252,
+        "lng": 100.7649855
+      },
+      "price": 5200,
+      "convenience": [
+        "air conditioner",
+        "allowpet",
+        "wifi"
+      ],
+      "distance_from_reference_m": 1183.75,
+      "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ3DMh3XKJpx5MVt2ZRM8y217v986N63HfcgIyqT8KgNEfHElMh9kUkyBvpsOboI1v7t49MmE4ai_9zrBwGCLD16ErGbSk_EUmd-PShLdwywagiYpx2NerY1jtImSmBjYC-YZTXKQb4UKnTXgq5yjNjlliEPa-I7CQSySam5ctOe56W_o9dbp8B0-AScIn28FhwJGavGy6wVAmAaChqR9LZOgRvWWRVHlgHQMZEY5H-xpqgUeO4wHnjgOSrkEby_REHQ320WRAbc8_KJy34ELozuemjygDXHE8gCfQt2bF3XafLqytR9SuUofOkIxztnRtQZKdyWh-zDZZc2PsVlCVuxE886cr7CDGQQBn9UOZMOMLGdRCR3_K-Fs7rW44kpLcO91GoJoisceWHNlKDmCiZhhMP2hfMpGN6dbIv8h37O9Ybu1jRnBM1mw6vAchg&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+      "floor": 4,
+      "room": "408",
+      "phone": "097-783-4384"
+    },
+    {
+      "name": "Pool Villa",
+      "address": "673 675 Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7259499,
+        "lng": 100.7653984
+      },
+      "price": 4800,
+      "convenience": [
+        "wifi",
+        "air conditioner",
+        "water heater"
+      ],
+      "distance_from_reference_m": 1153.45,
+      "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ1PNe5Hgc0GtI4aZJ6i9T0SYw6kfc-gsBfVoxArV8wZk6jNmcWZ3E-L9VylJrQ3czTgEXPXfZHHpJv3Do2aSAtyiOzyXwe5bU1y-v0tsHw-yAZ0iRUB16sbg5cQ2RvJ1L8-RNcBqYM7cdV1UMQF7eMVIUsQCApsLeWkMxA-54paYh4QZ1rm7MJvSEbgPN1eEiUDg0102i1Y6BXVZq1ctxMKx6Pdt_QL7VYtVQJbcpYAzNReWAvrWSUWoPldGF-1Js0hz5dUsRGTUxuErBeoa9YQcO8ALoXEoNjNUGovOYPXHyD-G93fy-B4dQVZQeecYkEqKUl3qNkocMP1uZxZKQyk2ln_hoP3E80_BTURjk3AQkmcyKF_QPckv__8sxPgAmJZ-KOxAgTx4I7mg7qRPnMG31Pmvca5V_srVb7wqNGu&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+      "floor": 4,
+      "room": "407",
+      "phone": "084-327-7301"
+    },
+    {
+      "name": "หอพักเดอะโฮม",
+      "address": "PQG8+H45, Lat Krabang, Bangkok 10520, Thailand",
+      "location": {
+        "lat": 13.7263786,
+        "lng": 100.7653486
+      },
+      "price": 3800,
+      "convenience": [
+        "furniture",
+        "water heater",
+        "allowpet"
+      ],
+      "distance_from_reference_m": 1144.39,
+      "image": null,
+      "floor": 5,
+      "room": "508",
+      "phone": "081-667-9826"
+    },
+    {
+      "name": "The HOME เดอะโฮม",
+      "address": "691 ซ.ฉลองกรุง 1 แยก 6, ถนน ฉลองกรุง แขวงลาดกระบัง เขตลาดกระบัง กรุงเทพมหานคร 10520, Thailand",
+      "location": {
+        "lat": 13.7264934,
+        "lng": 100.7652291
+      },
+      "price": 5400,
+      "convenience": [
+        "wifi",
+        "water heater"
+      ],
+      "distance_from_reference_m": 1153.35,
+      "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ2FdncucBNWoto2FO_BYLZiTk523CndCUv_87UHhDQfyonOq5IVhWWT18SUPiM0Ta4sC69Tr8CrSQJz-IzfUd4muwR-OefyriRfDYSc6VTtcADENbcQU-eWejKmxByz2rWYoyJZHAvfGMYeFm5a6YnrA1MyoXkLaJzZVumT9Hj0yOZGmsRVk3wEyza_ttkqIZWuAv0Qc9gv7nua44ZIp9Cr_38iMmdRpXSEMX7e_SWYt9xYl1ftwbpUnIZcVlu_cA-9gM9iTQl8Y1-RhGD6SA1qsj0WS4fZo-7OjiJdP7guzhAb9_kSXUtqNQ&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+      "floor": 4,
+      "room": "403",
+      "phone": "085-449-6275"
+    },
+    {
+      "name": "หอป้อ",
+      "address": "2 sun lat krabang Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7255445,
+        "lng": 100.7653222
+      },
+      "price": 4700,
+      "convenience": [
+        "furniture",
+        "air conditioner"
+      ],
+      "distance_from_reference_m": 1176.24,
+      "image": null,
+      "floor": 2,
+      "room": "208",
+      "phone": "081-838-7608"
+    },
+    {
+      "name": "WHITEOAK",
+      "address": "653, 4 Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.726619,
+        "lng": 100.7646697
+      },
+      "price": 5400,
+      "convenience": [
+        "furniture",
+        "wifi",
+        "allowpet",
+        "water heater",
+        "air conditioner"
+      ],
+      "distance_from_reference_m": 1208.31,
+      "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ1OnsU7W9bGXMehzWrkucjacZShtrb2mvJ6e78fCAO1LGJp2WIQw0kMZr8UqQdcPY-OoVvFNXJouQqTYLgdQUMGedMzKOiY9VUau2gK3dj0t43RQ9fHehG5AZVtFORnqoEPxkB0WTOkN-ZLT8EpUbl4UdTTt-tegiI_PUYDg6hjxPvExEV-MW_VH5d7EMTawx3cpXus5oAJ2QNVmEM8w_C1ihqyiThcxmymzyzxDrrhNZy10ycz3EPk6hoIz4RuJEkBldlJz1IRE5mtXMikxE5fMwCEHYrUsg2DH-yIu1D4rfCCSF1QT-B_AMC8TG2nKXLT0XdAjUdUWLuTZpWPhXvBOP5mP3cN5k-bVXjjx4IeUK6ANAtvM52_Og8GLNp1S88rdhOkJ_zUKKC54efuvQ_lXJYR0OPEAoIai8W5nv373Q&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+      "floor": 1,
+      "room": "110",
+      "phone": "094-838-4023"
+    },
+    {
+      "name": "2 Son Apartment",
+      "address": "2, sun, แขวงลาดกระบัง เขตลาดกระบัง กรุงเทพมหานคร 10520, Thailand",
+      "location": {
+        "lat": 13.7255824,
+        "lng": 100.7654063
+      },
+      "price": 4500,
+      "convenience": [
+        "air conditioner",
+        "allowpet"
+      ],
+      "distance_from_reference_m": 1166.26,
+      "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ3sg0Zuf1xpRv5G_cbdswE2sm6ygURx1ebj-vz1EycI3bhExaGF_Ifh03CeN88_wYwVgiJm3cETKNhiX7zo54rCFon54LjvqlWFDWjbR7r5r6H2CdvrLW8OMejz9-NwMV-FYBgBKEyOzisRpukU0q5sA377CqGZV-o1-mgOG0z23sr3BGTl5Dt2jGSx8NPLvHOhQdHoVPQ4VFDn_d-37gQPDnIIdCcYbX7WjvQXCCyR5Gu9Hwc3-d7ZpV6sehO9KkoPVbCf5ZpbXSm0zcXaQFruKDzWT4wRGjRLleaa7G0TN603zeDIP02_x80SgG0Pc5zZKYijJLu-6P2RY2sdgdgqDSILcMpZrhDaCQbfmQQS7URBg2qrm37aA9USktyKbAiI2iH6vNXv0L_S77SIUlLwLp4dFxp111eq_wd9beJ0&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+      "floor": 1,
+      "room": "109",
+      "phone": "094-663-7557"
+    },
+    {
+      "name": "Papamama Apartment (RNP)",
+      "address": "Papa mama Apartment 655/8 ห้อง 1301 Soi Chalong Krung 1, ลาดกระบัง Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7258812,
+        "lng": 100.764268
+      },
+      "price": 4000,
+      "convenience": [
+        "furniture",
+        "wifi",
+        "water heater",
+        "air conditioner",
+        "allowpet"
+      ],
+      "distance_from_reference_m": 1272.16,
+      "image": null,
+      "floor": 1,
+      "room": "109",
+      "phone": "085-262-2001"
+    },
+    {
+      "name": "หจก. เอส.ที.ศรีทองเพลส",
+      "address": "655/7 Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7260528,
+        "lng": 100.7642372
+      },
+      "price": 3500,
+      "convenience": [
+        "water heater",
+        "wifi",
+        "allowpet",
+        "furniture",
+        "air conditioner"
+      ],
+      "distance_from_reference_m": 1269.88,
+      "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ3RvbKaellVFORGnMoRztXjw1Z6LkhfBeTBdMBFssoA_cdeVfMYtLB15qRGpSWXSHSWIbRKzuqL82jUpGEDHmzs-AcMBm7i9zdEIdZ2gSTHpHQYLbNDqn9n9SgTsI7b9kTSWWUBP9rX8pEyx9DredcDGQj5H47VrqOYKdi8GbHtL3dp4_8RuUodOOpyWOnqy9uXkumxXT6xyuMzvPLYe9B9ofL0CPEtRfc4p8FmOxyZ3MhN-iopeKAzdFTkBG1tkFPZQyk8dxXi2Kisr4PrA9ACONwXs1HYI2Mo5r5dzBg5MglDae9PiBTIgQy1dwANA0eJMJ8S_yO9fbn9AkbtqPlL8mytKZjjoh3wIv1HsZif1ocaFsRLmEAbJfTUAEXQpxYmEavQkrAjOorfJxxsdfROaxb2r6kcuVyjaUBlkT0&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+      "floor": 4,
+      "room": "401",
+      "phone": "092-631-9490"
+    },
+    {
+      "name": "คัดสรรเพลส",
+      "address": "689 ถนนฉลองกรุง1 แยก6 ถนนฉลองกรุง ลาดกระบัง Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7252814,
+        "lng": 100.7651194
+      },
+      "price": 4900,
+      "convenience": [
+        "wifi"
+      ],
+      "distance_from_reference_m": 1207.16,
+      "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ0JR5ao2HcoTbcSs6BJhVnL0U7x2N0ENZ6NMOZq2OPvcLiMDa1Vcz0YVFT89ihs51sE4F_T94SSETLhtt0rMbQXk7z0xHEEXBruK6Ztf8-weU5_fiPOmkb9e5SsiMk5ZB6beWmBWYBSj2nT_vL7uD_-TtE8bWMV7hVZEpgTZT5yOfAwNsaFHX6rKjTJNdCU9RE5EMvLLrcKCSZXu62MaGbeL0q7awThxzWYDvXa5WFO5rVUlQJ57OOC6ChqYVIqyoWNVYFLrBn1dTP0WxpBE9XsK0VxcyeBycXQif8EmWDRjWjmA1srFPav4A&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+      "floor": 3,
+      "room": "311",
+      "phone": "081-428-3532"
+    },
+    {
+      "name": "TopHouse",
+      "address": "653/5 ซอย ฉลองกรุง 1โครงการ RNP Pl, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7264167,
+        "lng": 100.764196
+      },
+      "price": 4700,
+      "convenience": [
+        "furniture",
+        "air conditioner"
+      ],
+      "distance_from_reference_m": 1263.49,
+      "image": null,
+      "floor": 5,
+      "room": "501",
+      "phone": "082-820-7682"
+    },
+    {
+      "name": "Enjoy-Place A",
+      "address": "663 655/5 Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7264167,
+        "lng": 100.764196
+      },
+      "price": 4700,
+      "convenience": [
+        "wifi"
+      ],
+      "distance_from_reference_m": 1263.49,
+      "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ2K9BPAxLfCqaNfczcNw1VlfkuO9rhRDEun1ql-BILFXT4f3HyR7X02UwMlEEuMxiz6rPxFsYZ57RTCPz9UpneK9I0RoNptCAjbbN7ycoDRyFKYCiXSeE8YxHvdH1Ts3OcE6-OuaU8X37s9PxnUin5H92O-m6ITbZihunNFaT3aeqo4i9MjPgSa-CD9ELeQ-nWTATHr9f9EXBOxMMN19h6mdKPFi-R1QZD-owFAlrtL-uxAZUdABVrISkAyr3s1TyRV1sFKtFEScnxT4v66LRn9THNSFjtMb9GAF4nTXWPmsWagup65NBpZvg09CdtNamxCNpyQNej_CZjW5tH_VYbKNJDxSmghm8z-_VWGB30EqIuaxBmoomNJ9a3n8K-kURG2-7UZoMEMfpIU-_u84Gb_voFv5aAqOMRKPKYPPabH9sQM&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+      "floor": 1,
+      "room": "103",
+      "phone": "096-544-2111"
+    },
+    {
+      "name": "U-Place",
+      "address": "655/11-12 โครงการ RNP ตึก 20 และ 22 Soi Chalong Krung 1, ข Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7253308,
+        "lng": 100.7644276
+      },
+      "price": 4700,
+      "convenience": [
+        "allowpet"
+      ],
+      "distance_from_reference_m": 1275.2,
+      "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ02UippQS0oq7vSfA4BDIQ5dmfwFKP1dWIUsw--GNgYnETGddJ10kycRfb_V2oZVQkCMBd_7qcF0epnpeOVYuUOgQnA5TvlIFmRrfs7myuRtU-WFQmjFz6kbZXPwbg9Ulbc211BpOovjgeTpMgN9bN0j-FSKV60IKW8SPVKvleGQcigr7iliGDMZRC3MmLtopiCfA-kLWSr_1iqtA4hEOhBXRrMHfN5E1KrAqPJu9OF2UfAP-X96kQrL4e4MdcvOOkogMzrAe6BOnA2x9GdOXBNUSDiDjtNssVgGWVGOHZBqykzc1am508kNA&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+      "floor": 2,
+      "room": "203",
+      "phone": "094-295-9725"
+    },
+    {
+      "name": "JIA-JIA PLACE",
+      "address": "683-683-655/1 Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7253064,
+        "lng": 100.7654532
+      },
+      "price": 3900,
+      "convenience": [
+        "water heater",
+        "wifi",
+        "allowpet",
+        "air conditioner"
+      ],
+      "distance_from_reference_m": 1172.59,
+      "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ3ERVQZaEj8p5OMlWrrmorCrPD2gmVZM5k_J_WtVk2HNZRvnJUO-UiAJ0dUAd8hE5_8HHyDs0uE0xECl0NTNDVFQcNSq0LwQwRikljE6qIIMPAczM4H37h2buyGsGwE4TDFIaMxZ587D1TLingN1GACRC5MgsNOlXh_zy6Vjzr48GWQGM7SU-A1sp4vk0ylbQzu3T5z06kkIRYOCvJcOaEuvV7PVcCR_DsdyqhamoTGZzy2g1Vqkn6_8VrBbedeBO1QuXxGe1zypOXexUHC22gL7UuhrZyPMzpbm8o96WnXzZohgPY4qFio6aNNGsZJq4r1x-OkLP9p0QsNR6J-KKFLAe0zoz082ErnT7tGZoiesnrnwWwrG7ZXF8rarvU9OyyW0F5E-ltQKcCr4UMYEWabeiToiych__1_BAAzZNOv9t58&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+      "floor": 2,
+      "room": "212",
+      "phone": "086-588-1709"
+    },
+    {
+      "name": "A&J Mansion 1",
+      "address": "653 11 Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7253131,
+        "lng": 100.7643608
+      },
+      "price": 4900,
+      "convenience": [
+        "water heater",
+        "wifi"
+      ],
+      "distance_from_reference_m": 1282.66,
+      "image": null,
+      "floor": 4,
+      "room": "409",
+      "phone": "095-172-5395"
+    },
+    {
+      "name": "หอพักลีโอ",
+      "address": "4 Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7266867,
+        "lng": 100.764237
+      },
+      "price": 4400,
+      "convenience": [
+        "allowpet",
+        "wifi",
+        "air conditioner",
+        "water heater",
+        "furniture"
+      ],
+      "distance_from_reference_m": 1252.03,
+      "image": null,
+      "floor": 3,
+      "room": "306",
+      "phone": "091-236-4237"
+    },
+    {
+      "name": "แสงวัฒนาแมนชั่น",
+      "address": "Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7266696,
+        "lng": 100.7642117
+      },
+      "price": 4800,
+      "convenience": [
+        "air conditioner",
+        "wifi",
+        "furniture",
+        "allowpet"
+      ],
+      "distance_from_reference_m": 1255.12,
+      "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ1rK9HPGL2pEldbhreQOramjBIaPlr7n4tkIta78syynaR3um7PJ05Qu3m7KpnwER2ht1qn0RFkAe7hK-_Dy-3d5FcrLkJvLsi216amd2efM8yvDE1AjjTogPxtZWUDfdYJxE85qAB_VI1uI7DLKyQPa8bjGfSP8Sau8ygqpaErQ42Orwd8eCcFlqNd6CshGCIagnwZ9jsYyXqwCynCzMFXy7q0qLx_OPW_5PanhnJvHqi89qe1Ppok0BoJTcuAt_sMUFI4V0cpRnL2y5int6fs1EB91fO9Uo7hjikE8xLNkhw_SYSIc_cMcQ&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+      "floor": 2,
+      "room": "207",
+      "phone": "085-473-5768"
+    },
+    {
+      "name": "K-House RNP สจล.",
+      "address": "653/6 ถนน ฉลองกรุง Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7267092,
+        "lng": 100.7642198
+      },
+      "price": 5200,
+      "convenience": [
+        "furniture",
+        "air conditioner"
+      ],
+      "distance_from_reference_m": 1253.27,
+      "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ3X0f6kT9LNilbX0VVYhsbIhVn4kvyWdcfbjZ4U6oNLm31k1FVXu4vBvjpZC4E4OonNE9xInHY5u2hh8vUxnDdTEhATgJHuBpONQkO9y32o_lx5gMYcpsI2qdgHvU4XtuVVv69Kx7UQ-RN5WX01WyeMGjiUOUEykPVgyefg35Ssgrrqf9Z8mIR2FpGYBEHxfLZvn1yqEUUhf_eJWy9nubK15um0wAY7D1lliyNNMZOUB2Uocfl6c6pR-LENqknOdlJRZ4R4zdjNKit5KrdLRpCX8NSjIH6d82g-VuyhdTsGkeTlNFB_hBSijw&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+      "floor": 2,
+      "room": "208",
+      "phone": "096-534-8358"
+    },
+    {
+      "name": "Triple A Place 2",
+      "address": "632 Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.725709,
+        "lng": 100.763974
+      },
+      "price": 4100,
+      "convenience": [
+        "air conditioner",
+        "allowpet",
+        "furniture"
+      ],
+      "distance_from_reference_m": 1308.19,
+      "image": null,
+      "floor": 1,
+      "room": "104",
+      "phone": "082-524-3751"
+    },
+    {
+      "name": "อาทโฮมเพลส",
+      "address": "679 6 ฉลองกรุง 1 แยก 6 Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7270004,
+        "lng": 100.7651839
+      },
+      "price": 3700,
+      "convenience": [
+        "wifi",
+        "water heater",
+        "air conditioner",
+        "furniture",
+        "allowpet"
+      ],
+      "distance_from_reference_m": 1144.43,
+      "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ2TogAUgcsrWLWR7KVO5bymUzD_pAwr_zRQAqneyTsHrE9ssoISfLsph5RAUiu96exBPuVwbFxA_wnKBpTjiySOkt-s8rPkNRLVmq3e_8gi0FwqBZ3qKaRR3yRKLLT0aRjIszwy-A6L-1Lsu6TDeNitFzMllVtcU9RrHx7ytJdM0gC5mhSVX4jtjZrFgtTplJ_hheRiWdFW7xsJp3YhWBQwDnDV3s65yAGGKczyvJFhCX_11Xs3GatkE0NN-CFDn0DSFCB31Gn3wajOujdrHCWk6hzIlguh43TId4kCO3E6gp2uhZb2mg-ndNEqtcH7XaCq3Mvoqiave5zqd4Ejj66ycLJFxlRGNKPDcdm4_1p_6rmKxIlFpfgnp2euB42xPLTnsMLNEYduON3wMIEmjcTyuiVQb2Ktzh8optO1N-E&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+      "floor": 2,
+      "room": "203",
+      "phone": "083-265-2064"
+    },
+    {
+      "name": "กนกพร เรสซิเด้นท์",
+      "address": "653/2 ฉลองกรุง 1, ถ.ฉลองกรุง 1, ข.ลาดกระบัง กรุงเทพมหานคร, 10520 Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.727017,
+        "lng": 100.7645239
+      },
+      "price": 4800,
+      "convenience": [
+        "furniture",
+        "water heater"
+      ],
+      "distance_from_reference_m": 1213.79,
+      "image": null,
+      "floor": 1,
+      "room": "102",
+      "phone": "091-420-1342"
+    },
+    {
+      "name": "หอพักบ้านคุ้มธารา",
+      "address": "687 Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.725017,
+        "lng": 100.765342
+      },
+      "price": 3500,
+      "convenience": [
+        "allowpet"
+      ],
+      "distance_from_reference_m": 1196.0,
+      "image": null,
+      "floor": 4,
+      "room": "409",
+      "phone": "097-918-8015"
+    },
+    {
+      "name": "กนกพร เพลส",
+      "address": "ตึกที่2 จากป้อม รปภ.ทางซ้ายมือ 653/2 โครงการ RNP Pl, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7270862,
+        "lng": 100.7645229
+      },
+      "price": 4700,
+      "convenience": [
+        "water heater"
+      ],
+      "distance_from_reference_m": 1212.35,
+      "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ1dI91RDdINgd2lKFFdWIEHTHNSSsOJAymIszPtSA-kATGrlFGdSHDjemvju36l0ZxfC75kApyIJpZuwrX-JXvY6NUrH0UioB1FZihWcNdC3bswyHkrwSIEyOgZgn86omm1UbBlvAT1atHPv4HdvKlpaxS6RBCXkit0_QMN3xMzTEi6zWlaRj-wQ-n3YUFFCdBej4wi52q6Qjjvvv1NutiGaE-L2yBFzA9On2pD9oQq6bMsf02zHRjBWTuMzO9lOIahnWORYQUNV-qBbStPbTAtLRdBbPy74a6PT3vwNO9LEV9GsMN4j0a8Ivd0LPBrsoZDqhEH2XlTZGua-migpO4zZXf34bTYw5XOHJ2coQRkSPVkaYXNP_D0vEqapkg9QXVZJWBKxklI4-YE1OfLhofEJStjT_3iUMt8UXzhk5Y7JHsv&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+      "floor": 4,
+      "room": "410",
+      "phone": "098-607-8870"
+    },
+    
+    {
+      "name": "ธัญญลักษณ์ เฮ้าส์",
+      "address": "653, 1 Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7271855,
+        "lng": 100.7646154
+      },
+      "price": 4200,
+      "convenience": [
+        "water heater"
+      ],
+      "distance_from_reference_m": 1200.38,
+      "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUy1YQ1Fk-pbb3APfM87JEOXsu_8F0yO8jHEmgynW3oX9fkcDuXxMXHP1a0X1o7wVU_BHMTJRTs222uH9whoXlbBbPyGIVg75mVyxXVN1lATEFyIvyYALrnnzsOEbl5I2-NcSMu8CNL6I5gUv1s_X3SOwWKI6YAlPS5jtrE3PqnzbZkfbunCoHNdHrLxonFFSq-9_OtOhF8epKtIRw0tr1pqgSMwX_oyaWA5bow0c5BZ5JwrB-W-WJXCaTL_NJZxypPNE4t9pJ20Z8VANcPZtN5GM-_G87eYzqzr9fddGM3lVZwdAxaRo3DbD_qthe8oQnRb84OPmZ2Y0Ka4-IA-q9p_81J7FtrI6lH-qWgAaDjs2BBiuPQqhgNanck3nHKH-ZughKme86PcjPiMMLy7pZa4cO2OUZDqL-nUCQ3cMOQM5YQhZvZk&key=AIzaSyDK5sAEb6GW_oxNftcWmKSEjhIPFjfl7yE",
+      "floor": 3,
+      "room": "303",
+      "phone": "094-234-4690"
+    },
+    {
+      "name": "Triple A",
+      "address": "632 Soi Chalong Krung 1, Khwaeng Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+      "location": {
+        "lat": 13.7267489,
+        "lng": 100.7639294
+      },
+      "price": 4900,
+      "convenience": [
+        "furniture",
+        "air conditioner",
+        "allowpet"
+      ],
+      "distance_from_reference_m": 1282.92,
+      "image": null,
+      "floor": 5,
+      "room": "508",
+      "phone": "086-845-9680"
+    }
+  ]

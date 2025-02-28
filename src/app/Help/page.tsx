@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from "next/link";
-import { Menu, User, Mail, MapPin, Phone } from 'lucide-react';
+import { Menu, User, Mail, MapPin, Phone } from 'lucide-react'; // เพิ่มไอคอนที่ต้องการ
 
 export default function ContactPage() {
   return (
@@ -14,8 +14,8 @@ export default function ContactPage() {
         
         <div className="flex items-center gap-8">
           <Link href="/" className="text-gray-600 hover:text-gray-800">Home</Link>
-          <Link href="/booked" className="text-gray-600 hover:text-gray-800">Booked</Link>
           <Link href="/help" className="text-gray-600 hover:text-gray-800">Help</Link>
+          <Link href="/search" className="text-gray-600 hover:text-gray-800">Search</Link>
           <div className="flex items-center gap-4">
             <Menu className="w-6 h-6 text-gray-600" />
             <Link href="/login">
@@ -43,8 +43,8 @@ export default function ContactPage() {
               <MapPin className="w-8 h-8 text-gray-600 mb-4" />
               <h3 className="text-sm font-semibold text-gray-600 mb-2">Our Main Office</h3>
               <p className="text-lg text-gray-800">
-                1 Cheung Kruay 1 Alley,<br />
-                Last Knizepa, Bangkok<br />
+                1 Chaklong Kruay 1 Alley,<br />
+                Lat Krabang, Bangkok<br />
                 10520
               </p>
             </div>
@@ -53,7 +53,7 @@ export default function ContactPage() {
             <div className="bg-gray-100 p-6 rounded-lg text-center flex flex-col items-center justify-center">
               <Phone className="w-8 h-8 text-gray-600 mb-4" />
               <h3 className="text-sm font-semibold text-gray-600 mb-2">Phone Number</h3>
-              <p className="text-lg text-gray-800">00X-00X-00XX</p>
+              <p className="text-lg text-gray-800">1234567890</p>
             </div>
           </div>
         </div>
