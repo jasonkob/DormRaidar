@@ -6,6 +6,11 @@ const nextConfig: NextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: false,
   },
+  
+  images:{
+    domains:["maps.googleapis.com"]
+  },
+
   async redirects() {
     return [
       {

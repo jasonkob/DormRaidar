@@ -71,7 +71,7 @@ interface DormSliderProps {
         {dormList.map((dorm, index) =>
           dorm.image ? (
             <SwiperSlide key={index}  className="relative">
-               <Link href={`/dorm/${dorm.name}`} className="swiper-slide-active">
+               <Link href={`/DormDetail/${dorm.name}`} className="swiper-slide-active">
                   <img
                     src={dorm.image}
                     className={`w-full h-[200px] p-2  rounded-2xl select-none  transition duration-150 ease-in-out  hover:opacity-80 hover:scale-105 }`}
