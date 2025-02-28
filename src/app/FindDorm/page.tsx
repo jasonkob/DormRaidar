@@ -231,7 +231,7 @@ export default function Finddorm(){
                                 <div className="absolute -bottom-[125px] -left-0 w-full shadow-lg rounded-md bg-white z-10 ">
                                     <ul>
                                     {allDistance.map((item,index)=>(
-                                                <li className='p-2 pl-3 rounded-md  cursor-pointer select-none transition duration-100 ease-in hover:bg-yellow-200' key={index} onClick={()=>selectDistance({distance:item.content})}>{item.content} km</li>
+                                                <li className='text-black p-2 pl-3 rounded-md  cursor-pointer select-none transition duration-100 ease-in hover:bg-yellow-200' key={index} onClick={()=>selectDistance({distance:item.content})}>{item.content} km</li>
                                             ))}
                                     </ul>
                                 </div>
