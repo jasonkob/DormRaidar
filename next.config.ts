@@ -31,7 +31,21 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'streetviewpixels-pa.googleapis.com',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'fastly.4sqi.net',
+        pathname: '/**',
+      },
+      {protocol: 'https',
+      hostname: 'bcdn.renthub.in.th',
+      pathname: '/**',
+      },
+      {protocol: 'https',
+      hostname: 'lh5.googleusercontent.com',
+      pathname: '/**',
       }
+
     ],
   },
 }
