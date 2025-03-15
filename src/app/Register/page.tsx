@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, ChangeEvent, FormEvent } from 'react';
-import { Eye, EyeOff } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock} from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -109,23 +109,16 @@ const RegisterPage = () => {
   };
   
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen bg-white p-6">
+      {/* <div className="w-full max-w-md"> */}
+      <div className="relative w-full">
         {/* Back Button */}
         <Link href="/Home">
           <button className="text-black bg-amber-300 px-4 py-2 rounded-lg shadow-md mb-8">
             ← Back
           </button>
+          <img className="w-40 h-30 mx-auto mb-3" src='/logo.png' alt="logo" />
         </Link>
-
-        {/* Logo and Title */}
-        <div className="flex items-center gap-2 mb-8">
-          <div className="relative w-8 h-8">
-            <div className="absolute inset-0 bg-black rounded-sm" style={{ clipPath: 'polygon(0 0, 80% 0, 80% 100%, 0 100%)' }}></div>
-            <div className="absolute right-0 inset-y-0 w-2 bg-yellow-400"></div>
-          </div>
-          <h1 className="text-black text-xl font-semibold">Radar Dorm</h1>
-        </div>
 
         {/* Form Header */}
         <div className="text-center mb-8">
@@ -150,8 +143,8 @@ const RegisterPage = () => {
         {/* Registration Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="text-black block text-sm font-medium mb-1">Your Name</label>
-            <div className="relative">
+            <label className="text-black block text-sm max-w-sm mx-auto font-medium mb-1">Your Name</label>
+            <div className="relative max-w-sm mx-auto">
               <span className="absolute inset-y-0 left-3 flex items-center text-gray-500">
                 👤
               </span>
@@ -167,11 +160,9 @@ const RegisterPage = () => {
           </div>
 
           <div>
-            <label className="text-black block text-sm font-medium mb-1">Email Address</label>
-            <div className="relative">
-              <span className="absolute inset-y-0 left-3 flex items-center text-gray-500">
-                ✉️
-              </span>
+            <label className="text-black block text-sm max-w-sm mx-auto font-medium mb-1">Email Address</label>
+            <div className="relative max-w-sm mx-auto">
+              <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
               <input
                 type="email"
                 name="email"
@@ -184,11 +175,9 @@ const RegisterPage = () => {
           </div>
 
           <div>
-            <label className="text-black block text-sm font-medium mb-1">Password</label>
-            <div className="relative">
-              <span className="absolute inset-y-0 left-3 flex items-center text-gray-500">
-                🔒
-              </span>
+            <label className="text-black block text-sm max-w-sm mx-auto font-medium mb-1">Password</label>
+            <div className="relative max-w-sm mx-auto">
+              <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
@@ -202,42 +191,42 @@ const RegisterPage = () => {
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute inset-y-0 right-3 flex items-center"
               >
-                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                {showPassword ? <EyeOff className="h-5 w-5 text-gray-400" /> : <Eye className="h-5 w-5 text-gray-400" />}
               </button>
             </div>
           </div>
 
           <div>
-            <label className="text-black block text-sm font-medium mb-1">Confirm Password</label>
-            <div className="relative">
-              <span className="absolute inset-y-0 left-3 flex items-center text-gray-500">
-                🔒
-              </span>
+            <label className="text-black block text-sm max-w-sm mx-auto font-medium mb-1">Confirm Password</label>
+            <div className="relative max-w-sm mx-auto">
+              <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
               <input
                 type={showConfirmPassword ? "text" : "password"}
                 name="confirmPassword"
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 placeholder="Retype Password"
-                className="w-full pl-10 pr-10 py-2 border rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                className="w-full pl-10 pr-10 py-2 mb-7 border rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
               />
               <button
                 type="button"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                className="absolute inset-y-0 right-3 flex items-center"
+                className="absolute inset-y-0 right-3 mb-7 flex items-center"
               >
-                {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                {showConfirmPassword ? <EyeOff className="h-5 w-5 text-gray-400" /> : <Eye className="h-5 w-5 text-gray-400" />}
               </button>
             </div>
           </div>
 
+        <div className="relative max-w-sm mx-auto">
           <button
             type="submit"
             disabled={loading}
-            className={`text-black w-full py-2 px-4 bg-yellow-400 hover:bg-yellow-500 rounded-lg font-medium transition-colors ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={`text-black w-full py-3 px-4 bg-yellow-400 hover:bg-yellow-500 rounded-lg font-medium transition-colors ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
             {loading ? 'Creating account...' : 'Create account'}
           </button>
+          </div>
         </form>
       </div>
     </div>

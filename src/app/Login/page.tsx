@@ -65,6 +65,7 @@ const LoginPage = () => {
         <button className="text-black bg-amber-300 px-4 py-2 rounded-lg shadow-md mb-8">
           ← Back
         </button>
+        <img className="w-40 h-30 mx-auto mb-7" src='/logo.png' alt="logo" />
       </Link>
       
       <div className="max-w-md mx-auto">
@@ -76,18 +77,18 @@ const LoginPage = () => {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="relative">
-            <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+          <div className="relative max-w-sm mx-auto">
+            <Mail className="absolute left-3 top-8 h-5 w-5 text-gray-400" />
             <input
               type="email"
               placeholder="Email"
-              className="w-full pl-10 pr-4 py-2 border rounded-lg"
+              className="w-full mt-5 pl-10 pr-4 py-2 border rounded-lg"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             />
           </div>
 
-          <div className="relative">
+          <div className="relative max-w-sm mx-auto">
             <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
             <input
               type={showPassword ? "text" : "password"}
@@ -105,8 +106,8 @@ const LoginPage = () => {
             </button>
           </div>
 
-          <div className="flex items-center justify-between">
-            <label className="text-black flex items-center">
+          <div className="flex items-center justify-between max-w-sm mx-auto">
+            <label className="text-black mb-7 flex items-center">
               <input
                 type="checkbox"
                 className="mr-2"
@@ -115,11 +116,15 @@ const LoginPage = () => {
               />
               <span>Remember me</span>
             </label>
-            <Link href="#" className="text-blue-600">Forget password?</Link>
+            <Link href="#" className="text-blue-600 mb-7">Forget password?</Link>
           </div>
 
-          <button type="submit" className="text-black w-full bg-amber-300 py-3 rounded-lg font-medium">Login</button>
-          <p className="text-center"><Link href="/register" className="text-blue-600">Create Account</Link></p>
+          <div className="relative max-w-sm mx-auto">
+            <button type="submit" className="text-black w-full bg-amber-300 py-3 rounded-lg font-medium">
+              Login
+            </button>
+          </div>
+          <p className="text-gray-500 text-center mb-8">Do not have an account?<Link href="/Register" className="text-blue-600 ml-3">Create Account</Link></p>
         </form>
       </div>
     </div>
