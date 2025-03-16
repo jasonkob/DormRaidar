@@ -23,6 +23,9 @@ export default function Finddorm() {
   const [dormList, setDormList] = useState<Dorm[]>([]);
   const [selectedDorm, setSelectedDorm] = useState<string | null>(null);
   const [filteredDormList, setFilteredDormList] = useState<Dorm[]>([]);
+  const [isLoading, setIsLoading] = useState(false); // <-- เพิ่มตรงนี้
+  const [error, setError] = useState<string | null>(null); // <-- เพิ่มตรงนี้
+ 
 
   interface Dorm {
     name: string;
@@ -40,21 +43,73 @@ export default function Finddorm() {
 
   useEffect(() => {
     const loadDorms = async () => {
+      setIsLoading(true);
+      setError(null);
+      
       try {
-        const response = await fetch("/allPlaces.json");
+        // เปลี่ยน URL เป็น endpoint สำหรับดึงข้อมูลหอพักทั้งหมด
+        const response = await fetch("https://4m89qryq9k.execute-api.ap-southeast-1.amazonaws.com/default/getAllDorms", {
+          method: "GET"
+        });
+        
+        if (!response.ok) {
+          throw new Error("Failed to load dorms");
+        }
+        
         const data = await response.json();
         setDormList(data);
         setFilteredDormList(data);
       } catch (error) {
         console.error("Error loading dorm list:", error);
+        setError("ไม่สามารถโหลดข้อมูลหอพักได้ กรุณาลองใหม่อีกครั้ง");
+      } finally {
+        setIsLoading(false);
       }
     };
-
+  
     loadDorms();
   }, []);
-  const handleApply = () => {
-    applyFilters();
+  const handleApply = async () => {
+    try {
+      // สร้าง array ของ conveniences ที่เลือก
+      const selectedConveniences = [];
+      if (furniture) selectedConveniences.push("furniture");
+      if (allowPet) selectedConveniences.push("allowpet");
+      if (wifi) selectedConveniences.push("wifi");
+      if (waterHeater) selectedConveniences.push("water heater");
+      if (air) selectedConveniences.push("air conditioner");
+      
+      // เตรียมข้อมูลสำหรับส่งไปยัง API
+      const requestBody = {
+        location: location || undefined,
+        price: price > 0 ? price : undefined,
+        distance: distance > 0 ? distance : undefined,
+        conveniences: selectedConveniences.length > 0 ? selectedConveniences : undefined
+      };
+      
+      // เปลี่ยน URL เป็น endpoint สำหรับกรองข้อมูลหอพัก
+      const response = await fetch("https://s1jxjzwfa3.execute-api.ap-southeast-1.amazonaws.com/default/filterDorms", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(requestBody)
+      });
+      
+      if (!response.ok) {
+        throw new Error("Failed to filter dorms");
+      }
+      
+      const data = await response.json();
+      setFilteredDormList(data);
+    } catch (error) {
+      console.error("Error filtering dorms:", error);
+      // หากมีปัญหาในการเรียก API ให้ใช้การกรองในฝั่ง client เป็นตัวสำรอง
+      applyFilters();
+    }
   };
+  
+  // คงฟังก์ชัน applyFilters ไว้เป็นตัวสำรองในกรณีที่ API ไม่สามารถใช้งานได้
   // Apply filters to dormList and update filteredDormList
   const applyFilters = () => {
     let filtered = [...dormList];
@@ -209,7 +264,36 @@ export default function Finddorm() {
   const handleAir = () => {
     setAir(!air);
   };
-
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-indigo-500"></div>
+        <span className="ml-3">กำลังโหลดข้อมูล...</span>
+      </div>
+    );
+  }
+  
+  if (error) {
+    return (
+      <div className="flex justify-center items-center h-screen text-red-500">
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          className="h-6 w-6 mr-2" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth={2} 
+            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" 
+          />
+        </svg>
+        {error}
+      </div>
+    );
+  }
   return (
     <div className="flex w-full h-screen ">
       <section className="w-4/12 pl-4 pr-16">
@@ -555,6 +639,7 @@ export default function Finddorm() {
           </div>
         </div>
       </section>
+      
     </div>
   );
 }
