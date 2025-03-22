@@ -79,7 +79,6 @@ export default function Finddorm() {
       if (waterHeater) selectedConveniences.push("water heater");
       if (air) selectedConveniences.push("air conditioner");
       
-      // เตรียมข้อมูลสำหรับส่งไปยัง API
       const requestBody = {
         location: location || undefined,
         price: price > 0 ? price : undefined,
@@ -87,7 +86,6 @@ export default function Finddorm() {
         conveniences: selectedConveniences.length > 0 ? selectedConveniences : undefined
       };
       
-      // เปลี่ยน URL เป็น endpoint สำหรับกรองข้อมูลหอพัก
       const response = await fetch("https://s1jxjzwfa3.execute-api.ap-southeast-1.amazonaws.com/default/filterDorms", {
         method: "POST",
         headers: {

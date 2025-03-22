@@ -10,9 +10,13 @@ export default function Home() {
   const [shwPrice, setShwPrice] = useState(false);
 
   const allLocation = [
-    { id: 1, content: "kmitl" },
-    { id: 2, content: "kmutnb" },
-    { id: 3, content: "kmutt" },
+    { id: 1, content: "Keki Ngam 1" },
+    { id: 2, content: "Keki Ngam 2" },
+    { id: 3, content: "Keki Ngam 3" },
+    { id: 4, content: "Chalong Krung" },
+    { id: 5, content: "Chalong Krung 1" },
+    { id: 6, content: "Lat Krabang" },
+    { id: 7, content: "RNP Area" },
   ];
 
   const allPrice = [
@@ -93,7 +97,7 @@ export default function Home() {
                 <ul className="">
                   {allLocation.map((item, index) => (
                     <li
-                      className="p-2 rounded-md pl-4 cursor-pointer select-none transition duration-100 ease-in hover:bg-yellow-200"
+                      className="text-black p-2 rounded-md pl-4 cursor-pointer select-none transition duration-100 ease-in hover:bg-yellow-200"
                       key={index}
                       onClick={() => selectLocation({ location: item.content })}
                     >
@@ -155,7 +159,7 @@ export default function Home() {
                 <ul className="">
                   {allPrice.map((item, index) => (
                     <li
-                      className="p-2 rounded-md pl-4 cursor-pointer select-none transition duration-100 ease-in hover:bg-yellow-200"
+                      className="text-black p-2 rounded-md pl-4 cursor-pointer select-none transition duration-100 ease-in hover:bg-yellow-200"
                       key={index}
                       onClick={() => selectPrice({ price: item.price })}
                     >
