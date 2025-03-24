@@ -23,8 +23,8 @@ export default function Finddorm() {
   const [dormList, setDormList] = useState<Dorm[]>([]);
   const [selectedDorm, setSelectedDorm] = useState<string | null>(null);
   const [filteredDormList, setFilteredDormList] = useState<Dorm[]>([]);
-  const [isLoading, setIsLoading] = useState(false); // <-- เพิ่มตรงนี้
-  const [error, setError] = useState<string | null>(null); // <-- เพิ่มตรงนี้
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null); 
  
 
   interface Dorm {
