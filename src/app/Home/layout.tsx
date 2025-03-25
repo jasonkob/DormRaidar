@@ -189,14 +189,14 @@ export default function UserLayout({
                   </ul>
                   <ul className="mt-1 mb-1">
                     <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
-                      <Link href="/register">
+                      <Link href="/OwnerRegister">
                         <p className="px-4 py-2 text-[14px] text-black">
                           Become Dorm Admin
                         </p>
                       </Link>
                     </li>
                     <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
-                      <Link href="/login">
+                      <Link href="/OwnerLogin">
                         <p className="px-4 py-2 text-[14px] text-black">
                           Dorm Admin Login
                         </p>
