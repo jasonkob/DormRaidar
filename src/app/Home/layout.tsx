@@ -1,8 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+
+// ปรับปรุง User interface ให้ตรงกับข้อมูลที่ได้จาก API
+interface User {
+  id: string;
+  email: string;
+  name: string;
+}
 
 export default function UserLayout({
   children,
@@ -10,8 +17,56 @@ export default function UserLayout({
   children: React.ReactNode;
 }) {
   const [showMenu, setShowMenu] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
+
+  // โหลดข้อมูลผู้ใช้เมื่อคอมโพเนนท์ถูกโหลด
+  useEffect(() => {
+    const checkAuth = () => {
+      try {
+        // อ่านข้อมูลผู้ใช้จาก localStorage
+        const userJSON = localStorage.getItem("user");
+        const token = localStorage.getItem("authToken");
+        
+        if (userJSON && token) {
+          try {
+            // แปลงข้อมูล JSON เป็น object
+            const userData = JSON.parse(userJSON);
+            setUser(userData);
+            console.log("พบข้อมูลผู้ใช้:", userData);
+          } catch (parseError) {
+            console.error("ไม่สามารถแปลงข้อมูลผู้ใช้ได้:", parseError);
+          }
+        } else {
+          console.log("ไม่พบข้อมูลผู้ใช้ใน localStorage");
+        }
+      } catch (error) {
+        console.error("เกิดข้อผิดพลาดในการตรวจสอบการล็อกอิน:", error);
+      }
+    };
+    
+    // ทำงานเฉพาะในฝั่ง Browser
+    if (typeof window !== 'undefined') {
+      checkAuth();
+    }
+  }, []);
+
   const toggleMenu = () => {
     setShowMenu(!showMenu);
+  };
+
+  const handleLogout = () => {
+    // ลบข้อมูลทั้งหมดใน localStorage
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("tokenExpiry");
+    localStorage.removeItem("user");
+    localStorage.removeItem("rememberMe");
+    
+    // อัปเดต state
+    setUser(null);
+    setShowMenu(false);
+    
+    // กลับไปยังหน้าหลัก
+    window.location.href = "/Home";
   };
 
   return (
@@ -86,39 +141,70 @@ export default function UserLayout({
                 </clipPath>
               </defs>
             </svg>
+            {/* แสดงชื่อผู้ใช้หากล็อกอินแล้ว */}
+            {user && (
+              <span className="ml-2 font-medium text-black">{user.name}</span>
+            )}
           </div>
           {showMenu && (
-            <div className="absolute -bottom-[175px] right-0 w-[200px] h-[165px] border bg-white rounded-lg">
-              <ul className="border-b-2 mt-1">
-                <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
-                  <Link href="/register">
-                    <p className="px-4 py-2 text-[14px] font-semibold text-black">
-                      Sign up
-                    </p>
-                  </Link>
-                </li>
-                <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
-                  <Link href="/login">
-                    <p className="px-4 py-2 text-[14px] text-black">Login</p>
-                  </Link>
-                </li>
-              </ul>
-              <ul className="mt-1 mb-1">
-                <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
-                  <Link href="/register">
-                    <p className="px-4 py-2 text-[14px] text-black">
-                      Become Dorm Admin
-                    </p>
-                  </Link>
-                </li>
-                <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
-                  <Link href="/login">
-                    <p className="px-4 py-2 text-[14px] text-black">
-                      Dorm Admin Login
-                    </p>
-                  </Link>
-                </li>
-              </ul>
+            <div className="absolute -bottom-[175px] right-0 w-[200px] border bg-white rounded-lg shadow-lg z-20">
+              {user ? (
+                // แสดงเมนูสำหรับผู้ใช้ที่ล็อกอินแล้ว
+                <ul className="py-1">
+                  <li className="px-4 py-2 text-black font-semibold border-b">
+                    {user.name}
+                  </li>
+                  <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
+                    <Link href="/profile">
+                      <p className="px-4 py-2 text-[14px] text-black">
+                        Profile
+                      </p>
+                    </Link>
+                  </li>
+                  <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
+                    <button
+                      onClick={handleLogout}
+                      className="w-full text-left px-4 py-2 text-[14px] text-black"
+                    >
+                      Log out
+                    </button>
+                  </li>
+                </ul>
+              ) : (
+                // แสดงตัวเลือกล็อกอิน/สมัครเมื่อยังไม่ได้ล็อกอิน
+                <>
+                  <ul className="border-b-2 mt-1">
+                    <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
+                      <Link href="/register">
+                        <p className="px-4 py-2 text-[14px] font-semibold text-black">
+                          Sign up
+                        </p>
+                      </Link>
+                    </li>
+                    <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
+                      <Link href="/login">
+                        <p className="px-4 py-2 text-[14px] text-black">Login</p>
+                      </Link>
+                    </li>
+                  </ul>
+                  <ul className="mt-1 mb-1">
+                    <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
+                      <Link href="/register">
+                        <p className="px-4 py-2 text-[14px] text-black">
+                          Become Dorm Admin
+                        </p>
+                      </Link>
+                    </li>
+                    <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
+                      <Link href="/login">
+                        <p className="px-4 py-2 text-[14px] text-black">
+                          Dorm Admin Login
+                        </p>
+                      </Link>
+                    </li>
+                  </ul>
+                </>
+              )}
             </div>
           )}
         </div>

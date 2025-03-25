@@ -1,32 +1,91 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import React from "react";
+
+// ปรับปรุง User interface ให้ตรงกับข้อมูลที่ได้จาก API
+interface User {
+  id: string;
+  email: string;
+  name: string;
+}
 
 export default function UserLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [shwMenu, setShwMenu] = useState(false);
-  const showMenu = () => {
-    setShwMenu(!shwMenu);
+  const [showMenu, setShowMenu] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
+
+  // โหลดข้อมูลผู้ใช้เมื่อคอมโพเนนท์ถูกโหลด
+  useEffect(() => {
+    const checkAuth = () => {
+      try {
+        // อ่านข้อมูลผู้ใช้จาก localStorage
+        const userJSON = localStorage.getItem("user");
+        const token = localStorage.getItem("authToken");
+        
+        if (userJSON && token) {
+          try {
+            // แปลงข้อมูล JSON เป็น object
+            const userData = JSON.parse(userJSON);
+            setUser(userData);
+            console.log("พบข้อมูลผู้ใช้:", userData);
+          } catch (parseError) {
+            console.error("ไม่สามารถแปลงข้อมูลผู้ใช้ได้:", parseError);
+          }
+        } else {
+          console.log("ไม่พบข้อมูลผู้ใช้ใน localStorage");
+        }
+      } catch (error) {
+        console.error("เกิดข้อผิดพลาดในการตรวจสอบการล็อกอิน:", error);
+      }
+    };
+    
+    // ทำงานเฉพาะในฝั่ง Browser
+    if (typeof window !== 'undefined') {
+      checkAuth();
+    }
+  }, []);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
   };
+
+  const handleLogout = () => {
+    // ลบข้อมูลทั้งหมดใน localStorage
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("tokenExpiry");
+    localStorage.removeItem("user");
+    localStorage.removeItem("rememberMe");
+    
+    // อัปเดต state
+    setUser(null);
+    setShowMenu(false);
+    
+    // กลับไปยังหน้าหลัก
+    window.location.href = "/Home";
+  };
+
   return (
-    <div className="px-4 py-2 pt-10 flex flex-col justify-center h-screen overflow-hidden">
+    <div className="px-4 py-2 flex flex-col justify-center">
       <div className="flex justify-between items-center h-[80px] z-10">
         <div className="flex flex-row ">
           <Link href="/Home">
-            <div className="relative w-28 h-20">
-              <Image src="/logo.png" alt="logo" fill priority />
-            </div>
+            <Image
+              className="w-28 h-20"
+              src="/logo.png"
+              alt="logo"
+              width={112}
+              height={80}
+            />
           </Link>
           <div className="flex items-center mx-8">
             <Link
               href="/Home"
-              className="mx-4 text-base  transition-all duration-200 ease-out hover:font-semibold hover:underline"
+              className="mx-4 text-base transition-all duration-200 ease-out hover:font-semibold hover:underline"
             >
               Home
             </Link>
@@ -46,11 +105,11 @@ export default function UserLayout({
         </div>
         <div className="relative flex flex-col justify-center mr-4">
           <div
-            className="flex flex-row items-center p-2 border rounded-full bg-white cursor-pointer transition-all duration-150 ease-in-out hover:shadow-md"
-            onClick={showMenu}
+            className="flex flex-row items-center p-2 border-2 rounded-xl cursor-pointer transition-all duration-150 ease-in-out hover:shadow-xl bg-white"
+            onClick={toggleMenu}
           >
             <svg
-              className="mx-1"
+              className="mx-2"
               width="20"
               height="18"
               viewBox="0 0 20 18"
@@ -63,7 +122,7 @@ export default function UserLayout({
               />
             </svg>
             <svg
-              className="mx-1"
+              className="mx-2"
               width="30"
               height="30"
               viewBox="0 0 40 40"
@@ -82,45 +141,75 @@ export default function UserLayout({
                 </clipPath>
               </defs>
             </svg>
+            {/* แสดงชื่อผู้ใช้หากล็อกอินแล้ว */}
+            {user && (
+              <span className="ml-2 font-medium text-black">{user.name}</span>
+            )}
           </div>
-          {shwMenu && (
-            <div className="absolute -bottom-[175px] right-0 w-[200px] bg-white rounded-lg shadow-lg z-50 border">
-              <ul className="py-1">
-                <Link href="/register">
-                  <li className="cursor-pointer hover:bg-gray-100">
-                    <p className="text-black px-4 py-2 text-[14px] font-semibold">
-                      Sign up
-                    </p>
+          {showMenu && (
+            <div className="absolute -bottom-[175px] right-0 w-[200px] border bg-white rounded-lg shadow-lg z-20">
+              {user ? (
+                // แสดงเมนูสำหรับผู้ใช้ที่ล็อกอินแล้ว
+                <ul className="py-1">
+                  <li className="px-4 py-2 text-black font-semibold border-b">
+                    {user.name}
                   </li>
-                </Link>
-                <Link href="/login">
-                  <li className="cursor-pointer hover:bg-gray-100">
-                    <p className="text-black px-4 py-2 text-[14px]">Login</p>
+                  <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
+                    <Link href="/profile">
+                      <p className="px-4 py-2 text-[14px] text-black">
+                        Profile
+                      </p>
+                    </Link>
                   </li>
-                </Link>
-              </ul>
-              <hr className="border-gray-200" />
-              <ul className="py-1">
-                <Link href="/register">
-                  <li className="cursor-pointer hover:bg-gray-100">
-                    <p className="text-black px-4 py-2 text-[14px]">
-                      Become Dorm Admin
-                    </p>
+                  <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
+                    <button
+                      onClick={handleLogout}
+                      className="w-full text-left px-4 py-2 text-[14px] text-black"
+                    >
+                      Log out
+                    </button>
                   </li>
-                </Link>
-                <Link href="/login">
-                  <li className="cursor-pointer hover:bg-gray-100">
-                    <p className="text-black px-4 py-2 text-[14px]">
-                      Dorm Admin Login
-                    </p>
-                  </li>
-                </Link>
-              </ul>
+                </ul>
+              ) : (
+                // แสดงตัวเลือกล็อกอิน/สมัครเมื่อยังไม่ได้ล็อกอิน
+                <>
+                  <ul className="border-b-2 mt-1">
+                    <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
+                      <Link href="/register">
+                        <p className="px-4 py-2 text-[14px] font-semibold text-black">
+                          Sign up
+                        </p>
+                      </Link>
+                    </li>
+                    <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
+                      <Link href="/login">
+                        <p className="px-4 py-2 text-[14px] text-black">Login</p>
+                      </Link>
+                    </li>
+                  </ul>
+                  <ul className="mt-1 mb-1">
+                    <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
+                      <Link href="/register">
+                        <p className="px-4 py-2 text-[14px] text-black">
+                          Become Dorm Admin
+                        </p>
+                      </Link>
+                    </li>
+                    <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
+                      <Link href="/login">
+                        <p className="px-4 py-2 text-[14px] text-black">
+                          Dorm Admin Login
+                        </p>
+                      </Link>
+                    </li>
+                  </ul>
+                </>
+              )}
             </div>
           )}
         </div>
       </div>
-      <div className="flex justify-center px-2 w-full h-full">{children}</div>
+      <div className="flex justify-center px-2">{children}</div>
     </div>
   );
 }

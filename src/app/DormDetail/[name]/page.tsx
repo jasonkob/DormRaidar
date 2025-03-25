@@ -233,11 +233,10 @@ export default function Dorm() {
                   </div>
                 </div>
                 <Link
-                  href='/payment'
-                  className='w-11/12 bg-yellow-400 text-[20px] p-2 rounded-lg my-5 mb-10 transition duration-200 ease-in-out shadow-lg hover:bg-yellow-300'
-                >
-                  จองหอพัก
-                </Link>
+  href={`/payment/${encodeURIComponent(filteredDorms[0].name)}`}
+  className='w-11/12 bg-yellow-400 text-[20px] p-2 rounded-lg my-5 mb-10 transition duration-200 ease-in-out shadow-lg hover:bg-yellow-300'>
+                จองหอพัก
+              </Link>
               </div>
             </div>
           </section>
