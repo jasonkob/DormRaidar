@@ -162,11 +162,11 @@ const LoginPage = () => {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="relative max-w-sm mx-auto">
-            <Mail className="absolute left-3 top-8 h-5 w-5 text-gray-400" />
+            <Mail className="absolute left-3 top-8 h-5 w-5 text-gray-400 text-black" />
             <input
               type="email"
               placeholder="Email"
-              className="w-full mt-5 pl-10 pr-4 py-2 border rounded-lg"
+              className="w-full mt-5 pl-10 pr-4 py-2 border rounded-lg text-black" 
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               required
@@ -178,7 +178,7 @@ const LoginPage = () => {
             <input
               type={showPassword ? "text" : "password"}
               placeholder="Password"
-              className="w-full pl-10 pr-12 py-2 border rounded-lg"
+              className="w-full pl-10 pr-12 py-2 border rounded-lg text-black"
               value={formData.password}
               onChange={(e) => setFormData({ ...formData, password: e.target.value })}
               required
@@ -216,7 +216,7 @@ const LoginPage = () => {
           </div>
           <p className="text-center">
             Do not have an account?{" "}
-            <Link href="/Register" className="text-blue-600 ml-3">
+            <Link href="/register" className="text-blue-600 ml-3">
               Create Account
             </Link>
           </p>

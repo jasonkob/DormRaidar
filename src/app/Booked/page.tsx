@@ -101,7 +101,7 @@ const response = await fetch('https://9zlbgw9y8h.execute-api.ap-southeast-1.amaz
         return (
             <div className="bg-[url('/home.jpg')] bg-cover bg-center h-screen w-full rounded-3xl opacity-90 flex justify-center items-center">
                 <div className="bg-white p-6 rounded-lg shadow-md">
-                    <p className="text-xl font-semibold">กำลังโหลดข้อมูลการจอง...</p>
+                    <p className="text-black text-xl font-semibold">กำลังโหลดข้อมูลการจอง...</p>
                 </div>
             </div>
         );
@@ -113,7 +113,7 @@ const response = await fetch('https://9zlbgw9y8h.execute-api.ap-southeast-1.amaz
             <div className="bg-[url('/home.jpg')] bg-cover bg-center h-screen w-full rounded-3xl opacity-90 flex justify-center items-center">
                 <div className="bg-white p-6 rounded-lg shadow-md">
                     <p className="text-red-500 font-semibold">{error}</p>
-                    <p className="mt-4">กรุณาเข้าสู่ระบบเพื่อดูข้อมูลการจองของคุณ</p>
+                    <p className="text-black mt-4">กรุณาเข้าสู่ระบบเพื่อดูข้อมูลการจองของคุณ</p>
                     <Link href="/login" className="mt-4 block text-center bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
                         เข้าสู่ระบบ
                     </Link>

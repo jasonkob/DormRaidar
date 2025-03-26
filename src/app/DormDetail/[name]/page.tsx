@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import ImgSlide from "./imageSlider";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 
 export default function Dorm() {
+  const router = useRouter();
+  
   interface Dorm {
     name: string;
     address: string;
@@ -44,6 +46,19 @@ export default function Dorm() {
   const params = useParams();
   const name = params?.name ? decodeURIComponent(params.name as string) : "";
   const [filteredDorms, setFilteredDorms] = useState<Dorm[]>([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // ตรวจสอบการล็อกอิน
+    const checkAuth = () => {
+      const token = localStorage.getItem("authToken");
+      setIsLoggedIn(!!token);
+    };
+    
+    if (typeof window !== 'undefined') {
+      checkAuth();
+    }
+  }, []);
 
   useEffect(() => {
     const loadDorms = async () => {
@@ -62,6 +77,16 @@ export default function Dorm() {
 
     loadDorms();
   }, [name]); // Added 'name' to the dependency array
+
+  const handleBooking = () => {
+    if (!isLoggedIn) {
+      // ถ้าไม่ได้ล็อกอิน ให้ redirect ไปหน้า login
+      router.push('/login');
+    } else {
+      // ถ้าล็อกอินแล้ว ให้ไปหน้าชำระเงิน
+      router.push(`/payment/${encodeURIComponent(filteredDorms[0].name)}`);
+    }
+  };
 
   return (
     <div className='w-full h-screen overflow-visible '>
@@ -232,11 +257,11 @@ export default function Dorm() {
                     </span>
                   </div>
                 </div>
-                <Link
-  href={`/payment/${encodeURIComponent(filteredDorms[0].name)}`}
-  className='w-11/12 bg-yellow-400 text-[20px] p-2 rounded-lg my-5 mb-10 transition duration-200 ease-in-out shadow-lg hover:bg-yellow-300'>
-                จองหอพัก
-              </Link>
+                <button
+                  onClick={handleBooking}
+                  className='w-11/12 bg-yellow-400 text-[20px] p-2 rounded-lg my-5 mb-10 transition duration-200 ease-in-out shadow-lg hover:bg-yellow-300'>
+                  จองหอพัก
+                </button>
               </div>
             </div>
           </section>
