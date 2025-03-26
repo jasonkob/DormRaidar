@@ -264,7 +264,7 @@ export default function Finddorm() {
   };
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center ">
         <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-indigo-500"></div>
         <span className="ml-3">กำลังโหลดข้อมูล...</span>
       </div>
@@ -273,7 +273,7 @@ export default function Finddorm() {
   
   if (error) {
     return (
-      <div className="flex justify-center items-center h-screen text-red-500">
+      <div className="flex justify-center items-center h-screen text-red-500 ">
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           className="h-6 w-6 mr-2" 
@@ -296,7 +296,7 @@ export default function Finddorm() {
     <div className="flex w-full h-screen ">
       <section className="w-4/12 pl-4 pr-16">
         <div className="w-full flex justify-between items-center p-2 mb-5 mt-1">
-          <span className="text-[22px]">Filters</span>
+          <span className="text-[22px] select-none">Filters</span>
           <span
             className="text-[14px] text-indigo-500 cursor-pointer select-none transition-all duration-150 ease-in-out hover:text-indigo-700"
             onClick={resetAllValue}
@@ -333,7 +333,7 @@ export default function Finddorm() {
                 />
               </svg>
               {shwLocation && (
-                <div className="absolute -bottom-[225px] -left-0 w-full shadow-lg rounded-md bg-white z-10">
+                <div className="absolute -bottom-[285px] -left-0 w-full shadow-lg rounded-md bg-white z-10">
                   <ul>
                     {allLocation.map((item, index) => (
                       <li

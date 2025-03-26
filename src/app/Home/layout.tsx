@@ -142,37 +142,31 @@ export default function UserLayout({
               </defs>
             </svg>
             {/* แสดงชื่อผู้ใช้หากล็อกอินแล้ว */}
-            {user && (
-              <span className="ml-2 font-medium text-black">{user.name}</span>
-            )}
+        
           </div>
           {showMenu && (
-            <div className="absolute -bottom-[175px] right-0 w-[200px] border bg-white rounded-lg shadow-lg z-20">
+            <div>
               {user ? (
                 // แสดงเมนูสำหรับผู้ใช้ที่ล็อกอินแล้ว
-                <ul className="py-1">
-                  <li className="px-4 py-2 text-black font-semibold border-b">
-                    {user.name}
-                  </li>
-                  <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
-                    <Link href="/profile">
-                      <p className="px-4 py-2 text-[14px] text-black">
-                        Profile
-                      </p>
-                    </Link>
-                  </li>
-                  <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
-                    <button
-                      onClick={handleLogout}
-                      className="w-full text-left px-4 py-2 text-[14px] text-black"
-                    >
-                      Log out
-                    </button>
-                  </li>
-                </ul>
+                <div className="absolute -bottom-[100px] right-0 w-[200px] border bg-white rounded-lg shadow-lg z-20">
+                  <ul className="pt-1">
+                    <li className="px-4 py-2 text-black font-semibold border-b">
+                      {user.name}
+                    </li>
+                  
+                    <li className="cursor-pointer select-none transition duration-150 ease-in-out rounded-b-lg ">
+                      <button
+                        onClick={handleLogout}
+                        className="w-full text-left px-4 py-2 text-[14px] transition duration-150 text-red-400 hover:bg-red-400 hover:text-white hover:rounded-b-lg"
+                      >
+                        Log out
+                      </button>
+                    </li>
+                  </ul>
+                </div>
               ) : (
                 // แสดงตัวเลือกล็อกอิน/สมัครเมื่อยังไม่ได้ล็อกอิน
-                <>
+                <div className="absolute -bottom-[175px] right-0 w-[200px] border bg-white rounded-lg shadow-lg z-20">
                   <ul className="border-b-2 mt-1">
                     <li className="cursor-pointer select-none transition duration-150 ease-in-out hover:bg-yellow-200">
                       <Link href="/register">
@@ -203,7 +197,7 @@ export default function UserLayout({
                       </Link>
                     </li>
                   </ul>
-                </>
+                  </div>
               )}
             </div>
           )}
