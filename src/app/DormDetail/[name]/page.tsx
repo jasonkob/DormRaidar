@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import ImgSlide from "./imageSlider";
 import Image from "next/image";
-import DormReviewComponent from "./DormReviewComponent";
+import { DormReviewComponent } from "./DormReviewComponent";
 
 export default function Dorm() {
   const router = useRouter();

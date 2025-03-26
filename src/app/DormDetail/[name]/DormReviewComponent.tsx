@@ -18,7 +18,7 @@ interface Review {
   created_at?: string;
 }
 
-const DormReviewComponent: React.FC<ReviewProps> = ({ dormName, currentUser }) => {
+export const DormReviewComponent: React.FC<ReviewProps> = ({ dormName, currentUser }) => {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -27,6 +27,8 @@ const DormReviewComponent: React.FC<ReviewProps> = ({ dormName, currentUser }) =
   const [rating, setRating] = useState(0);
   const [submitting, setSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
+  const [canReview, setCanReview] = useState(false);
+  const [verifyingBooking, setVerifyingBooking] = useState(false);
 
   // Fetch all reviews for this dormitory
   useEffect(() => {
@@ -86,12 +88,99 @@ const DormReviewComponent: React.FC<ReviewProps> = ({ dormName, currentUser }) =
     }
   }, [dormName]);
 
+  // Check if the user has a completed booking for this dorm
+  const verifyUserCanReview = async () => {
+    if (!currentUser) {
+      setCanReview(false);
+      return;
+    }
+
+    
+
+    try {
+      console.log("currentUser.id:", currentUser?.id);
+      console.log("dormName:", dormName);
+      setVerifyingBooking(true);
+      
+      // Call the verification API
+      const response = await fetch("https://fvkrhtp8bj.execute-api.ap-southeast-1.amazonaws.com/default/verify_booking", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          body: JSON.stringify({
+            userId: currentUser.id,
+            dormName: dormName
+          })
+        }),
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Error verifying booking: ${response.status}`);
+      }
+      
+      const responseData = await response.json();
+      console.log("Verification raw response:", responseData);
+      
+      // Parse the response body if it's a string
+      let result;
+      if (typeof responseData === 'string') {
+        result = JSON.parse(responseData);
+      } else if (responseData.body && typeof responseData.body === 'string') {
+        result = JSON.parse(responseData.body);
+      } else {
+        result = responseData;
+      }
+      
+      console.log("Verification parsed result:", result);
+      
+      // Update the state based on the response
+      setCanReview(result.canReview === true);
+      
+      if (!result.canReview) {
+        console.log("User cannot review this dorm - no completed booking found");
+        setError("คุณต้องมีการจองหอพักที่สำเร็จแล้วเพื่อเขียนรีวิว");
+        
+        // Clear the error after 3 seconds
+        setTimeout(() => {
+          setError(null);
+        }, 3000);
+      } else {
+        setShowCommentForm(true);
+      }
+    } catch (err) {
+      console.error("Error verifying booking:", err);
+      setError("ไม่สามารถตรวจสอบสถานะการจอง กรุณาลองใหม่อีกครั้ง");
+      
+      // Default to false if there's an error
+      setCanReview(false);
+    } finally {
+      setVerifyingBooking(false);
+    }
+  };
+
+  // Handle review button click 
+  const handleReviewButtonClick = () => {
+    if (!currentUser) {
+      setError("กรุณาเข้าสู่ระบบก่อนแสดงความคิดเห็น");
+      return;
+    }
+    
+    verifyUserCanReview();
+  };
+
   // Submit a new review
   const handleSubmitReview = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!currentUser) {
       setError("กรุณาเข้าสู่ระบบก่อนแสดงความคิดเห็น");
+      return;
+    }
+    
+    if (!canReview) {
+      setError("คุณต้องมีการจองหอพักที่สำเร็จแล้วเพื่อเขียนรีวิว");
       return;
     }
     
@@ -194,7 +283,7 @@ const DormReviewComponent: React.FC<ReviewProps> = ({ dormName, currentUser }) =
             }`}
             onClick={() => onChange && onChange(star)}
             onMouseEnter={() => onChange && setHoverRating(star)}
-            onMouseLeave={() => onChange && setHoverRating(0)} // Removed unused parameter `e`
+            onMouseLeave={() => onChange && setHoverRating(0)} 
           />
         ))}
       </div>
@@ -207,10 +296,11 @@ const DormReviewComponent: React.FC<ReviewProps> = ({ dormName, currentUser }) =
         <span className="text-[20px] font-semibold">รีวิวจากผู้เข้าพัก</span>
         {currentUser && !showCommentForm && (
           <button 
-            onClick={() => setShowCommentForm(true)}
-            className="text-white bg-indigo-500 hover:bg-indigo-600 px-4 py-2 rounded-lg transition-colors text-sm"
+            onClick={handleReviewButtonClick}
+            className="text-white bg-indigo-500 hover:bg-indigo-600 px-4 py-2 rounded-lg transition-colors text-sm disabled:bg-indigo-300"
+            disabled={verifyingBooking}
           >
-            เขียนรีวิว
+            {verifyingBooking ? "กำลังตรวจสอบ..." : "เขียนรีวิว"}
           </button>
         )}
       </div>
@@ -297,6 +387,5 @@ const DormReviewComponent: React.FC<ReviewProps> = ({ dormName, currentUser }) =
       )}
     </div>
   );
-};
-
+}
 export default DormReviewComponent;
