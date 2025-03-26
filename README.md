@@ -34,10 +34,10 @@ This project is a part of the course PRINCIPLES OF SOFTWARE DEVELOPMENT PROCESS.
 3. Or open at https://main.d1cjdijjwnorid.amplifyapp.com/Home
 
 ## Team
-1.นายเดชสุขมงคล บุญตา 
-2.นายธีรพล นักรบ 
-3.นายนนทวัช ผ่องสีนวล 
-4.นายพิทวัส กิจมงคลชัย 
-5.นายศักดา รอดชาติ 
+1. นายเดชสุขมงคล บุญตา 
+2. นายธีรพล นักรบ 
+3. นายนนทวัช ผ่องสีนวล 
+4. นายพิทวัส กิจมงคลชัย 
+5. นายศักดา รอดชาติ 
 
 
