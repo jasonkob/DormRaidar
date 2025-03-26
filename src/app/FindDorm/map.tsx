@@ -26,6 +26,7 @@ const GoogleMapsComponent: React.FC<mapProps> = ({
 }) => {
   const mapRef = useRef<google.maps.Map | null>(null);
   const [isMapLoaded, setIsMapLoaded] = useState(false);
+  const markersRef = useRef<google.maps.marker.AdvancedMarkerElement[]>([]);
 
   // ใช้ useLoadScript แทน LoadScript component
   const { isLoaded, loadError } = useLoadScript({
@@ -35,28 +36,34 @@ const GoogleMapsComponent: React.FC<mapProps> = ({
 
   useEffect(() => {
     if (!isMapLoaded || !mapRef.current || !window.google) return;
-
+  
+    // Clear old markers
+    markersRef.current.forEach((marker) => marker.map =null);
+    markersRef.current = [];
+  
+    // Add new markers
     dormList.forEach((dorm) => {
-      if (dorm.image === null || dorm.image === undefined) return;
+      if (!dorm.image) return;
+  
       const priceTag = document.createElement("div");
       priceTag.className = "price-tag";
       priceTag.textContent = `${dorm.price} ฿`;
-      priceTag.style.zIndex = "100";
-      priceTag.style.pointerEvents = "auto";
-
+  
       const marker = new google.maps.marker.AdvancedMarkerElement({
         map: mapRef.current!,
         position: { lat: dorm.location.lat, lng: dorm.location.lng },
         content: priceTag,
         gmpClickable: true,
       });
-
+  
       marker.addListener("click", () => {
         console.log("Marker clicked:", dorm.name);
         onDormSelect(dorm.name);
       });
+  
+      markersRef.current.push(marker);
     });
-  }, [isMapLoaded, dormList, onDormSelect]);
+  })
 
   if (loadError) return <div>Error loading maps</div>;
   if (!isLoaded) return <div>Loading maps...</div>;

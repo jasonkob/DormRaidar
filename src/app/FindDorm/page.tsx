@@ -69,6 +69,7 @@ export default function Finddorm() {
   
     loadDorms();
   }, []);
+  
   const handleApply = async () => {
     try {
       // สร้าง array ของ conveniences ที่เลือก
