@@ -175,9 +175,9 @@ const DormReviewComponent: React.FC<ReviewProps> = ({ dormName, currentUser }) =
         return dateStr;
       }
       return date.toLocaleDateString('th-TH');
-    } catch (e) {
+    } catch {
       return dateStr;
-    }
+    }    
   };
 
   const RatingStars = ({ value, onChange }: { value: number; onChange?: (rating: number) => void }) => {
@@ -194,7 +194,7 @@ const DormReviewComponent: React.FC<ReviewProps> = ({ dormName, currentUser }) =
             }`}
             onClick={() => onChange && onChange(star)}
             onMouseEnter={() => onChange && setHoverRating(star)}
-            onMouseLeave={() => onChange && setHoverRating(0)}
+            onMouseLeave={() => onChange && setHoverRating(0)} // Removed unused parameter `e`
           />
         ))}
       </div>
