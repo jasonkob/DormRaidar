@@ -166,7 +166,7 @@ const LoginPage = () => {
             <input
               type="email"
               placeholder="Email"
-              className="w-full mt-5 pl-10 pr-4 py-2 border rounded-lg"
+              className="text-black w-full mt-5 pl-10 pr-4 py-2 border rounded-lg"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               required
@@ -178,7 +178,7 @@ const LoginPage = () => {
             <input
               type={showPassword ? "text" : "password"}
               placeholder="Password"
-              className="w-full pl-10 pr-12 py-2 border rounded-lg"
+              className="text-black w-full pl-10 pr-12 py-2 border rounded-lg"
               value={formData.password}
               onChange={(e) => setFormData({ ...formData, password: e.target.value })}
               required
