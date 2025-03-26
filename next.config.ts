@@ -44,6 +44,14 @@ const nextConfig: NextConfig = {
       {protocol: 'https',
       hostname: 'lh5.googleusercontent.com',
       pathname: '/**',
+      },
+      {protocol: 'https',
+      hostname: '**',
+      pathname: '/**',
+      },
+      {protocol: 'http',
+      hostname: '**',
+      pathname: '/**',
       }
 
     ],
