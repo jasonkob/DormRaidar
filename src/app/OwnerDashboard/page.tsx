@@ -21,12 +21,15 @@ const UnitsConfirmation = () => {
     booking_date: string;
     qr_url?: string;
   }
+  
+  const [ownedDorms, setOwnedDorms] = useState<Dormitory[]>([]);
 
   interface Dormitory {
     name: string;
     address: string;
     price: number;
     phone: string;
+    image?: string;
     [key: string]: string | number | boolean | undefined;
   }
   
@@ -35,18 +38,6 @@ const UnitsConfirmation = () => {
   const [error, setError] = useState<string | null>(null);
   const [selectedBooking, setSelectedBooking] = useState<Booking | null>(null);
   const [showPaymentPopup, setShowPaymentPopup] = useState(false);
-  
-  // Add state for storing raw API responses for debugging
-  interface ApiResponses {
-    dormitories: Record<string, unknown> | null;
-    bookings: Record<string, unknown> | null;
-  }
-  
-  const [apiResponses, setApiResponses] = useState<ApiResponses>({
-    dormitories: null,
-    bookings: null
-  });
-  const [debugMode, setDebugMode] = useState(false); // Debug mode toggle
   
   // Direct API endpoints
   const API_ENDPOINTS = {
@@ -62,9 +53,6 @@ const UnitsConfirmation = () => {
       if (userData) {
         const parsedUser = JSON.parse(userData);
         setOwner(parsedUser);
-        
-        // Log owner data for debugging
-        console.log("Owner data from localStorage:", parsedUser);
       } else {
         setError("User not logged in");
       }
@@ -80,14 +68,10 @@ const UnitsConfirmation = () => {
     
     const fetchBookings = async () => {
       try {
-        console.log("Fetching dormitories for owner ID:", owner.id);
-        
         // Step 1: Get owned dormitories
         const ownedDormRequestData = {
           body: JSON.stringify({ ownerId: owner.id })
         };
-        
-        console.log("Request to getOwnedDormitories:", ownedDormRequestData);
         
         const dormResponse = await axios.post(
           API_ENDPOINTS.getOwnedDormitories,
@@ -98,11 +82,6 @@ const UnitsConfirmation = () => {
             }
           }
         );
-        
-        console.log("Response from getOwnedDormitories:", dormResponse.data);
-        
-        // Store raw response for debugging
-        setApiResponses((prev: ApiResponses) => ({...prev, dormitories: dormResponse.data}));
         
         // Parse the dormitories data from the response
         let dormitories = [];
@@ -115,16 +94,17 @@ const UnitsConfirmation = () => {
           dormitories = dormResponse.data.dormitories;
         }
         
+        // Store dormitories in state
+        setOwnedDorms(dormitories);
+        
         // If no dormitories, return early
         if (dormitories.length === 0) {
-          console.log("No dormitories found for this owner");
           setLoading(false);
           return;
         }
         
         // Step 2: Get bookings for these dormitories
         const dormNames = dormitories.map((dorm: { name: string }) => dorm.name);
-        console.log("Dormitory names:", dormNames);
         
         const bookingsRequestData = {
           body: JSON.stringify({ 
@@ -132,8 +112,6 @@ const UnitsConfirmation = () => {
             status: "Verifying payment" 
           })
         };
-        
-        console.log("Request to getBookingsByDorms:", bookingsRequestData);
         
         const bookingResponse = await axios.post(
           API_ENDPOINTS.getBookingsByDorms,
@@ -144,11 +122,6 @@ const UnitsConfirmation = () => {
             }
           }
         );
-        
-        console.log("Response from getBookingsByDorms:", bookingResponse.data);
-        
-        // Store raw response for debugging
-        setApiResponses((prev: typeof apiResponses) => ({...prev, bookings: bookingResponse.data}));
         
         // Parse the bookings data from the response
         let bookingsData = [];
@@ -173,11 +146,6 @@ const UnitsConfirmation = () => {
     fetchBookings();
   }, [owner, API_ENDPOINTS.getOwnedDormitories, API_ENDPOINTS.getBookingsByDorms]);
 
-  // Toggle debug mode
-  const toggleDebugMode = () => {
-    setDebugMode(!debugMode);
-  };
-
   // Handle verification button click
   const handleVerifyPayment = (booking: Booking) => {
     setSelectedBooking(booking);
@@ -189,16 +157,12 @@ const UnitsConfirmation = () => {
     if (!selectedBooking) return;
     
     try {
-      console.log("Confirming payment for booking:", selectedBooking.booking_id);
-      
       const updateRequestData = {
         body: JSON.stringify({ 
           booking_id: selectedBooking.booking_id,
           newStatus: "Booking complete" 
         })
       };
-      
-      console.log("Request to updateBookingStatus:", updateRequestData);
       
       const response = await axios.post(
         API_ENDPOINTS.updateBookingStatus,
@@ -209,8 +173,6 @@ const UnitsConfirmation = () => {
           }
         }
       );
-      
-      console.log("Response from updateBookingStatus:", response.data);
       
       // Update the local state
       setBookings(bookings.filter(b => b.booking_id !== selectedBooking.booking_id));
@@ -227,16 +189,12 @@ const UnitsConfirmation = () => {
     if (!selectedBooking) return;
     
     try {
-      console.log("Cancelling booking:", selectedBooking.booking_id);
-      
       const updateRequestData = {
         body: JSON.stringify({ 
           booking_id: selectedBooking.booking_id,
           newStatus: "Cancelled" 
         })
       };
-      
-      console.log("Request to updateBookingStatus:", updateRequestData);
       
       const response = await axios.post(
         API_ENDPOINTS.updateBookingStatus,
@@ -247,8 +205,6 @@ const UnitsConfirmation = () => {
           }
         }
       );
-      
-      console.log("Response from updateBookingStatus:", response.data);
       
       // Update the local state
       setBookings(bookings.filter(b => b.booking_id !== selectedBooking.booking_id));
@@ -313,40 +269,25 @@ const UnitsConfirmation = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       <div className="container mx-auto px-4 py-8">
-        {/* Header Section with Debug Toggle */}
-        <div className="mb-8">
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <div className="flex justify-between items-center">
-              <h1 className="text-3xl font-bold text-gray-800 mb-2">
-                {currentDate}
-              </h1>
-              <button 
-                onClick={toggleDebugMode}
-                className="text-xs text-gray-500 underline"
-              >
-                {debugMode ? "ปิดโหมดดีบัก" : "เปิดโหมดดีบัก"}
-              </button>
-            </div>
-            <h2 className="text-xl font-semibold text-gray-700 flex items-center">
-              <span className="inline-block w-2 h-6 bg-blue-500 mr-3 rounded"></span>
-              การยืนยันการจอง
-            </h2>
-          </div>
-        </div>
+{/* Header Section */}
+<div className="mb-8 flex justify-between items-center">
+  <div className="bg-white rounded-lg shadow-md p-6">
+    <h1 className="text-3xl font-bold text-gray-800 mb-2">
+      {currentDate}
+    </h1>
+    <h2 className="text-xl font-semibold text-gray-700 flex items-center">
+      <span className="inline-block w-2 h-6 bg-blue-500 mr-3 rounded"></span>
+      การยืนยันการจอง
+    </h2>
+  </div>
+  <button
+    onClick={() => window.location.href = "/DormAddInfo"}
+    className="bg-green-500 text-white px-4 py-2 rounded-lg shadow hover:bg-green-600 transition-colors"
+  >
+    เพิ่มหอพัก
+  </button>
+</div>
 
-        {/* Debug Information (only when debug mode is enabled) */}
-        {/* {debugMode && (
-          <div className="text-black mb-8 bg-gray-100 p-4 rounded-lg">
-            <h3 className="text-black font-bold mb-2">Debug Information:</h3>
-            <p><strong>Owner ID:</strong> {owner?.id || 'Not found'}</p>
-            <div className="mt-2">
-              <h4 className="font-semibold">API Responses:</h4>
-              <div className="bg-white p-2 rounded mt-1 overflow-auto max-h-60">
-                <pre className="text-xs">{JSON.stringify(apiResponses, null, 2)}</pre>
-              </div>
-            </div>
-          </div>
-        )} */}
 
         {/* Booking Confirmation Section */}
         <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
@@ -407,55 +348,47 @@ const UnitsConfirmation = () => {
             ) : (
               <div className="p-8 text-center text-gray-500">
                 ไม่มีการจองที่รอการยืนยัน
-                {debugMode && apiResponses.bookings && (
-                  <div className="mt-2 text-xs text-left bg-gray-100 p-2 rounded">
-                    <p className="font-semibold">Raw bookings response:</p>
-                    <pre>{JSON.stringify(apiResponses.bookings, null, 2)}</pre>
-                  </div>
-                )}
               </div>
             )}
           </div>
         </div>
 
-        {/* Display owned dormitories (only when debug mode is enabled) */}
-        {debugMode && apiResponses.dormitories && (
-          <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
-            <div className="text-black p-6 border-b">
-              <h2 className="text-xl font-semibold text-gray-800">
-                หอพักที่เป็นเจ้าของ (Debug)
-              </h2>
-            </div>
-            <div className="p-4">
-              <div className="text-black grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {(() => {
-                  // Parse dormitories from the response
-                  let dormitories: Dormitory[] = [];
-                  if (apiResponses.dormitories?.body && typeof apiResponses.dormitories.body === 'string') {
-                    try {
-                      const parsedBody = JSON.parse(apiResponses.dormitories.body);
-                      dormitories = parsedBody.dormitories || [];
-                    } catch (error) {
-                      console.error("Error parsing dormitories:", error);
-                      return <div>Error parsing dormitories data</div>;
-                    }
-                  } else if (apiResponses.dormitories?.dormitories) {
-                    dormitories = apiResponses.dormitories.dormitories as Dormitory[];
-                  }
-                  
-                  return dormitories.map((dorm: Dormitory, index: number) => (
-                    <div key={index} className="border rounded p-3">
-                      <p><strong>ชื่อหอพัก:</strong> {dorm.name}</p>
-                      <p><strong>ที่อยู่:</strong> {dorm.address}</p>
-                      <p><strong>ราคา:</strong> ฿{dorm.price}</p>
-                      <p><strong>เบอร์โทร:</strong> {dorm.phone}</p>
-                    </div>
-                  ));
-                })()}
-              </div>
-            </div>
+        {/* Owned Dormitories Section */}
+        <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+          <div className="p-6 border-b">
+            <h2 className="text-xl font-semibold text-gray-800">
+              หอพักที่เป็นเจ้าของ
+            </h2>
+            <p className="text-gray-500">รายการหอพักที่คุณเป็นเจ้าของ</p>
           </div>
-        )}
+
+          <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {ownedDorms.length > 0 ? (
+              ownedDorms.map((dorm, index) => (
+                <div key={index} className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                  <div className="h-48 overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                      src={dorm.image || "/api/placeholder/400/300"} 
+                      alt={dorm.name} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-semibold text-lg text-gray-800 mb-2">{dorm.name}</h3>
+                    <p className="text-gray-600 mb-1"><span className="font-medium">ที่อยู่:</span> {dorm.address}</p>
+                    <p className="text-gray-600 mb-1"><span className="font-medium">ราคา:</span> ฿{dorm.price}</p>
+                    <p className="text-gray-600"><span className="font-medium">เบอร์โทร:</span> {dorm.phone}</p>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="col-span-full text-center p-8 text-gray-500">
+                คุณยังไม่มีหอพักที่เป็นเจ้าของ
+              </div>
+            )}
+          </div>
+        </div>
 
         {/* Footer Navigation */}
         <div className="mt-12 flex justify-center p-6 bg-white rounded-xl shadow-md">
@@ -496,7 +429,7 @@ const UnitsConfirmation = () => {
             
             <div className="mb-6">
               <h3 className="font-semibold text-black mb-2">หลักฐานการชำระเงิน:</h3>
-              <div className="flex justify-center ">
+              <div className="flex justify-center">
                 {selectedBooking.qr_url ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img 

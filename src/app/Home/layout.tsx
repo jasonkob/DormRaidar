@@ -23,32 +23,37 @@ export default function UserLayout({
   useEffect(() => {
     const checkAuth = () => {
       try {
-        // อ่านข้อมูลผู้ใช้จาก localStorage
         const userJSON = localStorage.getItem("user");
-        const token = localStorage.getItem("authToken");
-        
-        if (userJSON && token) {
-          try {
-            // แปลงข้อมูล JSON เป็น object
-            const userData = JSON.parse(userJSON);
-            setUser(userData);
-            console.log("พบข้อมูลผู้ใช้:", userData);
-          } catch (parseError) {
-            console.error("ไม่สามารถแปลงข้อมูลผู้ใช้ได้:", parseError);
-          }
-        } else {
-          console.log("ไม่พบข้อมูลผู้ใช้ใน localStorage");
-        }
+const token = localStorage.getItem("authToken");
+
+if (userJSON && token) {
+  try {
+    const userData: User = JSON.parse(userJSON);
+
+    // Ensure the userData object has all required properties
+    if (userData.id && userData.email && userData.name) {
+      setUser(userData);
+      console.log("พบข้อมูลผู้ใช้:", userData);
+    } else {
+      console.error("ข้อมูลผู้ใช้ไม่สมบูรณ์:", userData);
+    }
+  } catch (parseError) {
+    console.error("ไม่สามารถแปลงข้อมูลผู้ใช้ได้:", parseError);
+  }
+} else {
+  console.log("ไม่พบข้อมูลผู้ใช้ใน localStorage");
+}
+
       } catch (error) {
         console.error("เกิดข้อผิดพลาดในการตรวจสอบการล็อกอิน:", error);
       }
     };
-    
-    // ทำงานเฉพาะในฝั่ง Browser
+  
     if (typeof window !== 'undefined') {
       checkAuth();
     }
   }, []);
+  
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
