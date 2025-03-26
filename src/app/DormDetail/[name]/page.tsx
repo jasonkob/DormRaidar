@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import ImgSlide from "./imageSlider";
 import Image from "next/image";
-// import Link from "next/link";
+import DormReviewComponent from "./DormReviewComponent";
 
 export default function Dorm() {
   const router = useRouter();
@@ -22,37 +22,47 @@ export default function Dorm() {
     phone: string;
   }
 
+  interface User {
+    id: string;
+    email: string;
+    name: string;
+  }
+
   const dormRule = [
     "สามารถทำอาหารได้",
     "ไม่อนุญาตให้เลี้ยงสัตว์",
     "ระมัดระวังในการใช้เสียงให้ไม่รบกวนผู้อื่น",
-  ];
-  const dormReview = [
-    {
-      username: "juthamat",
-      point: 3,
-      date: "14/02/25",
-      comment:
-        "เหมือนจะรีโนเวทห้องใหม่นะคะ ห้องดูใหม่มากๆ ขนาดสียังไม่แห้งเลยค่ะ",
-    },
-    {
-      username: "worachit",
-      point: 4,
-      date: "24/02/25",
-      comment: "ห้องน้ำมีแบ่งโซนเปียกให้ด้วยครับ ดีมากเลย",
-    },
   ];
 
   const params = useParams();
   const name = params?.name ? decodeURIComponent(params.name as string) : "";
   const [filteredDorms, setFilteredDorms] = useState<Dorm[]>([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // ตรวจสอบการล็อกอิน
     const checkAuth = () => {
-      const token = localStorage.getItem("authToken");
-      setIsLoggedIn(!!token);
+      try {
+        const token = localStorage.getItem("authToken");
+        const userJSON = localStorage.getItem("user");
+        
+        if (token && userJSON) {
+          setIsLoggedIn(true);
+          try {
+            const userData = JSON.parse(userJSON);
+            setUser(userData);
+          } catch (error) {
+            console.error("Error parsing user data:", error);
+          }
+        } else {
+          setIsLoggedIn(false);
+          setUser(null);
+        }
+      } catch (error) {
+        console.error("Error checking authentication:", error);
+      }
     };
     
     if (typeof window !== 'undefined') {
@@ -63,6 +73,7 @@ export default function Dorm() {
   useEffect(() => {
     const loadDorms = async () => {
       try {
+        setLoading(true);
         const response = await fetch("https://4m89qryq9k.execute-api.ap-southeast-1.amazonaws.com/default/getAllDorms", {
           method: "GET"
         });
@@ -70,13 +81,15 @@ export default function Dorm() {
 
         const matchingDorms = data.filter((dorm) => dorm.name === name);
         setFilteredDorms(matchingDorms);
+        setLoading(false);
       } catch (error) {
         console.error("Error loading dorm list:", error);
+        setLoading(false);
       }
     };
 
     loadDorms();
-  }, [name]); // Added 'name' to the dependency array
+  }, [name]);
 
   const handleBooking = () => {
     if (!isLoggedIn) {
@@ -87,6 +100,15 @@ export default function Dorm() {
       router.push(`/payment/${encodeURIComponent(filteredDorms[0].name)}`);
     }
   };
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-indigo-500"></div>
+        <span className="ml-3">กำลังโหลดข้อมูล...</span>
+      </div>
+    );
+  }
 
   return (
     <div className='w-full h-screen overflow-visible '>
@@ -179,41 +201,11 @@ export default function Dorm() {
                 </ul>
               </div>
 
-              <div className='mt-6 mb-6'>
-                <span className='text-[20px] font-semibold'>
-                  รีวิวจากผู้เข้าพัก
-                </span>
-                <ul className='mt-1'>
-                  {dormReview.map((review, index) => (
-                    <li key={index} className='my-2 mt-1 mb-4'>
-                      <span>{review.username}</span>
-                      <div className='flex mb-2 mt-2 pl-3'>
-                        {Array.from({ length: review.point }).map(
-                          (_, starIndex) => (
-                            <svg
-                              key={starIndex}
-                              width='24'
-                              height='24'
-                              viewBox='0 0 24 24'
-                              fill='none'
-                              xmlns='http://www.w3.org/2000/svg'
-                            >
-                              <path
-                                d='M5.825 21L7.45 13.975L2 9.25L9.2 8.625L12 2L14.8 8.625L22 9.25L16.55 13.975L18.175 21L12 17.275L5.825 21Z'
-                                fill='#F1CF61'
-                              />
-                            </svg>
-                          )
-                        )}
-                        <span className='ml-3 text-slate-400'>
-                          {review.date}
-                        </span>
-                      </div>
-                      <span className='pl-3'>{review.comment}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {/* ส่วนรีวิวที่ใช้ DormReviewComponent แทน */}
+              <DormReviewComponent 
+                dormName={filteredDorms[0].name} 
+                currentUser={user} 
+              />
             </div>
 
             {/* book dorm */}
