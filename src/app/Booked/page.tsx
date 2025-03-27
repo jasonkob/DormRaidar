@@ -3,24 +3,145 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function BookingList() {
-    interface Booking {
-        booking_id: string;
-        dorm_name: string;
-        dormDetails?: {
-            image?: string;
-            address?: string;
-            room?: string;
-            phone?: string;
-        };
-        tel?: string;
-        booking_date: string;
-        status: string;
-    }
+// เพิ่ม interface สำหรับรายละเอียดของหอพัก
+interface DormDetails {
+    image?: string;
+    address?: string;
+    room?: string;
+    phone?: string;
+    location?: {
+        lat: number;
+        lng: number;
+    };
+    convenience?: string[];
+    location_area?: string;
+    price?: number;
+    floor?: number;
+    name?: string;
+    distance_from_reference_m?: number;
+}
 
+// เพิ่ม interface สำหรับข้อมูลการจอง
+interface Booking {
+    booking_id: string;
+    dorm_name: string;
+    dormDetails?: DormDetails;
+    tel?: string;
+    booking_date: string;
+    status: string;
+    qr_url?: string;
+    user_id?: string;
+}
+
+// คอมโพเนนท์สำหรับแสดงสถานะการจอง
+function StatusBadge({ status }: { status: string }) {
+    let bgColor = "bg-gray-200";
+    let textColor = "text-gray-700";
+    
+    if (status === "Booking complete") {
+        bgColor = "bg-green-200";
+        textColor = "text-green-700";
+    } else if (status === "Verifying payment") {
+        bgColor = "bg-yellow-200";
+        textColor = "text-yellow-700";
+    } else if (status === "Waiting for payment") {
+        bgColor = "bg-purple-200";
+        textColor = "text-purple-700";
+    } else if (status === "Cancelled") {
+        bgColor = "bg-red-200";
+        textColor = "text-red-700";
+    }
+    
+    return (
+        <span className={`${bgColor} ${textColor} px-3 py-1 mt-2 rounded-full text-sm`}>
+            {status}
+        </span>
+    );
+}
+
+// คอมโพเนนท์สำหรับแสดงรายละเอียดการจองในรูปแบบ popup
+function BookingDetailPopup({ booking, onClose }: { booking: Booking; onClose: () => void }) {
+    return (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+            <div className="bg-white rounded-lg p-6 max-w-md w-full max-h-[90vh] overflow-y-auto">
+                <div className="flex justify-between items-start mb-4">
+                    <h2 className="text-xl font-bold text-black">{booking.dorm_name}</h2>
+                    <button 
+                        onClick={onClose}
+                        className="text-gray-500 hover:text-gray-700 text-xl"
+                    >
+                        &times;
+                    </button>
+                </div>
+                
+                <div className="space-y-3">
+                    <div className="border-b pb-2">
+                        <h3 className="font-semibold text-black">ข้อมูลการจอง</h3>
+                        <p className="text-sm text-gray-600">รหัสการจอง: <span className="font-medium">{booking.booking_id}</span></p>
+                        <p className="text-sm text-gray-600">วันที่จอง: <span className="font-medium">{booking.booking_date}</span></p>
+                        <p className="text-sm text-gray-600">สถานะ: <StatusBadge status={booking.status} /></p>
+                    </div>
+                    
+                    <div className="border-b pb-2">
+                        <h3 className="font-semibold text-black">ข้อมูลหอพัก</h3>
+                        {booking.dormDetails && (
+                            <>
+                                <p className="text-sm text-gray-600">ที่อยู่: <span className="font-medium">{booking.dormDetails.address}</span></p>
+                                <p className="text-sm text-gray-600">ห้อง: <span className="font-medium">{booking.dormDetails.room}</span></p>
+                                <p className="text-sm text-gray-600">ชั้น: <span className="font-medium">{booking.dormDetails.floor}</span></p>
+                                <p className="text-sm text-gray-600">ราคา: <span className="font-medium">{booking.dormDetails.price} บาท/เดือน</span></p>
+                                <p className="text-sm text-gray-600">พื้นที่: <span className="font-medium">{booking.dormDetails.location_area}</span></p>
+                                <p className="text-sm text-gray-600">เบอร์ติดต่อ: <span className="font-medium">{booking.tel || booking.dormDetails.phone}</span></p>
+                            </>
+                        )}
+                    </div>
+                    
+                    {booking.dormDetails?.convenience && booking.dormDetails.convenience.length > 0 && (
+                        <div>
+                            <h3 className="font-semibold text-black">สิ่งอำนวยความสะดวก</h3>
+                            <div className="flex flex-wrap gap-2 mt-1">
+                                {booking.dormDetails.convenience.map((item, index) => (
+                                    <span key={index} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                                        {item}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                    
+                    {booking.qr_url && (
+                        <div>
+                            <h3 className="font-semibold text-black">สลิปจ่ายการจองหอ</h3>
+                            <div className="flex justify-center mt-2">
+                                <div className="relative w-48 h-48">
+                                    <Image
+                                        src={booking.qr_url}
+                                        fill
+                                        className="object-contain"
+                                        alt="QR Payment"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+                
+                <button
+                    onClick={onClose}
+                    className="mt-6 w-full bg-yellow-400 text-black py-2 px-4 rounded hover:bg-yellow-500"
+                >
+                    ปิด
+                </button>
+            </div>
+        </div>
+    );
+}
+
+export default function BookingList() {
     const [bookings, setBookings] = useState<Booking[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const [selectedBooking, setSelectedBooking] = useState<Booking | null>(null);
 
     useEffect(() => {
         const fetchUserBookings = async () => {
@@ -37,16 +158,15 @@ export default function BookingList() {
                 const userId = userData.id;
                 
                 // เรียกใช้ API เพื่อดึงข้อมูลการจอง
-                // เรียกใช้ API เพื่อดึงข้อมูลการจอง
-const response = await fetch('https://9zlbgw9y8h.execute-api.ap-southeast-1.amazonaws.com/default/showBookingList', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ 
-        body: JSON.stringify({ userId }) 
-    }),
-});
+                const response = await fetch('https://9zlbgw9y8h.execute-api.ap-southeast-1.amazonaws.com/default/showBookingList', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        body: JSON.stringify({ userId }) 
+                    }),
+                });
                 
                 const data = await response.json();
                 console.log("API response data:", data);
@@ -95,6 +215,16 @@ const response = await fetch('https://9zlbgw9y8h.execute-api.ap-southeast-1.amaz
         
         fetchUserBookings();
     }, []);
+
+    // เปิด popup แสดงรายละเอียดการจอง
+    const openBookingDetail = (booking: Booking) => {
+        setSelectedBooking(booking);
+    };
+
+    // ปิด popup
+    const closeBookingDetail = () => {
+        setSelectedBooking(null);
+    };
 
     // แสดงข้อความกำลังโหลด
     if (loading) {
@@ -169,41 +299,26 @@ const response = await fetch('https://9zlbgw9y8h.execute-api.ap-southeast-1.amaz
                                 <p className="text-sm text-gray-500">Booking day: {booking.booking_date}</p>
                             </div>
                             <div className="flex flex-col items-end p-4">
-                                <Link href={`/booking-detail/${booking.booking_id}`} className="text-blue-500 text-sm">
+                                <button 
+                                    onClick={() => openBookingDetail(booking)}
+                                    className="text-blue-500 text-sm hover:underline focus:outline-none"
+                                >
                                     See detail
-                                </Link>
+                                </button>
                                 <StatusBadge status={booking.status} />
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
+            
+            {/* Popup แสดงรายละเอียดการจอง */}
+            {selectedBooking && (
+                <BookingDetailPopup 
+                    booking={selectedBooking} 
+                    onClose={closeBookingDetail} 
+                />
+            )}
         </div>
-    );
-}
-
-// คอมโพเนนท์แสดงสถานะการจอง
-function StatusBadge({ status }: { status: string }) {
-    let bgColor = "bg-gray-200";
-    let textColor = "text-gray-700";
-    
-    if (status === "Booking complete") {
-        bgColor = "bg-green-200";
-        textColor = "text-green-700";
-    } else if (status === "Verifying payment") {
-        bgColor = "bg-yellow-200";
-        textColor = "text-yellow-700";
-    } else if (status === "Waiting for payment") {
-        bgColor = "bg-purple-200";
-        textColor = "text-purple-700";
-    } else if (status === "Cancelled") {
-        bgColor = "bg-red-200";
-        textColor = "text-red-700";
-    }
-    
-    return (
-        <span className={`${bgColor} ${textColor} px-3 py-1 mt-2 rounded-full text-sm`}>
-            {status}
-        </span>
     );
 }
